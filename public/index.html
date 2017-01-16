@@ -79,6 +79,95 @@
       <!-- OpenLayers 3 Map -->
       <div id="map">
       </div>
+      <!-- Side panels -->
+      <div class="row main-row">
+        <div class="col-sm-4 col-md-3 sidebar sidebar-left pull-left">
+          <div class="panel-group sidebar-body" id="accordion-left">
+            <!-- Layers list panel -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#layers">
+                    <i class="fa fa-list-alt"></i>Layers
+                  </a>
+                  <span class="pull-right slide-submenu">
+                    <i class="fa fa-chevron-left"></i>
+                  </span>
+                </h4>
+              </div>
+              <div class="panel-collapse collapse in" id="layers">
+                <div class="panel-body list-group">
+                  <!-- Print map layers here -->
+                  <a href="#" class="list-group-item">
+                    <i class="fa fa-globe"></i> Open Street Map
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <i class="fa fa-globe"></i> Bing
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Properties panel -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#properties">
+                    <i class="fa fa-list-alt"></i>Properties
+                  </a>
+                </h4>
+              </div>
+              <div class="panel-collapse collapse in" id="properties">
+                <div class="panel-body">
+                  <!-- Properties panel content -->
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-6 mid"></div>
+        <div class="col-sm-4 col-md-3 sidebar sidebar-right pull-right">
+          <div class="panel-group sidebar-body" id="accordion-right">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#taskpane">
+                    <i class="fa fa-tasks"></i>Task Pane
+                  </a>
+                  <span class="pull-right slide-submenu">
+                    <i class="fa fa-chevron-right"></i>
+                  </span>
+                </h4>
+              </div>
+              <div class="panel-collapse collapse in" id="taskpane">
+                <div class="panel-body">
+                  <!-- Task pane content -->
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="min-submenu min-submenu-left pull-left">
+        <i class="fa fa-list-alt"></i>
+      </div>
+      <div class="min-submenu min-submenu-right pull-right">
+        <i class="fa fa-tasks"></i>
+      </div>
     </div>
   </body>
 </html>
