@@ -74,16 +74,17 @@
           </div>
         </div>
       </nav>
-      <!-- Offset -->
+      <!-- Offset from navigation bar -->
       <div class="navbar-offset"></div>
       <!-- OpenLayers 3 Map -->
-      <div id="map">
-      </div>
+      <div id="map"></div>
       <!-- Side panels -->
       <div class="row main-row">
+        <!-- Left sidebar (includes layers and properties panels) -->
         <div class="col-sm-4 col-md-3 sidebar sidebar-left pull-left">
+          <!-- Group two panels together -->
           <div class="panel-group sidebar-body" id="accordion-left">
-            <!-- Layers list panel -->
+            <!-- Layers panel -->
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
@@ -97,7 +98,7 @@
               </div>
               <div class="panel-collapse collapse in" id="layers">
                 <div class="panel-body list-group">
-                  <!-- Print map layers here -->
+                  <!-- Print map layers list here -->
                   <a href="#" class="list-group-item">
                     <i class="fa fa-globe"></i> Open Street Map
                   </a>
@@ -135,13 +136,15 @@
           </div>
         </div>
         <div class="col-sm-4 col-md-6 mid"></div>
+        <!-- Right sidebar (contains one tasks panel) -->
         <div class="col-sm-4 col-md-3 sidebar sidebar-right pull-right">
           <div class="panel-group sidebar-body" id="accordion-right">
+            <!-- Tasks panel -->
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" href="#taskpane">
-                    <i class="fa fa-tasks"></i> Task Pane
+                    <i class="fa fa-tasks"></i> Tasks
                   </a>
                   <span class="pull-right slide-submenu">
                     <i class="fa fa-chevron-right"></i>

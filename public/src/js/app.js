@@ -45,7 +45,7 @@ $(function() {
       applyMargins();
     });
   });
-  $("min-submenu-left").on("click", function() {
+  $(".min-submenu-left").on("click", function() {
     var thisElem = $(this);
     $(".sidebar-left .sidebar-body").toggle("slide");
     thisElem.hide();
@@ -58,7 +58,7 @@ $(function() {
       applyMargins();
     });
   });
-  $("min-submenu-right").on("click", function() {
+  $(".min-submenu-right").on("click", function() {
     var thisElem = $(this);
     $(".sidebar-right .sidebar-body").toggle("slide");
     thisElem.hide();
