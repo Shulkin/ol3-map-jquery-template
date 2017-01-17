@@ -38,6 +38,33 @@ function applyInitialUIState() {
 }
 // init application
 $(function() {
+  $(".sidebar-left .slide-submenu").on("click", function() {
+    var thisElem = $(this);
+    thisElem.closest(".sidebar-body").fadeOut("slide", function() {
+      $(".min-submenu-left").fadeIn();
+      applyMargins();
+    });
+  });
+  $("min-submenu-left").on("click", function() {
+    var thisElem = $(this);
+    $(".sidebar-left .sidebar-body").toggle("slide");
+    thisElem.hide();
+    applyMargins();
+  });
+  $(".sidebar-right .slide-submenu").on("click", function() {
+    var thisElem = $(this);
+    thisElem.closest(".sidebar-body").fadeOut("slide", function() {
+      $(".min-submenu-right").fadeIn();
+      applyMargins();
+    });
+  });
+  $("min-submenu-right").on("click", function() {
+    var thisElem = $(this);
+    $(".sidebar-right .sidebar-body").toggle("slide");
+    thisElem.hide();
+    applyMargins();
+  });
+  $(window).on("resize", applyMargins);
   // create map
   var map = new ol.Map({
     target: "map",
@@ -51,4 +78,6 @@ $(function() {
       zoom: 2
     })
   });
+  applyInitialUIState();
+  applyMargins();
 });
