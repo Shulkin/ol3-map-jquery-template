@@ -1,9 +1,6 @@
 body {
   overflow: hidden;
 }
-.navbar-offset {
-  margin-top: 50px;
-}
 #map {
   position: absolute;
   top: 50px;
@@ -14,6 +11,27 @@ body {
 #map .ol-zoom {
   font-size: 1.2em;
 }
+/* Offset indicates where navbar ends and map starts */
+.navbar-offset {
+  /* 50px from the top */
+  margin-top: 50px;
+}
+/*
+.main-row {
+  position: relative;
+  top: 150px;
+}
+*/
+#map {
+  z-index: 35;
+}
+/* Left and right sidebars should be above map */
+.sidebar {
+  z-index: 45;
+  /* All margins 0.5em */
+  margin: .5em;
+}
+/*
 .zoom-top-opened-sidebar {
   margin-top: 5px;
 }
@@ -41,16 +59,6 @@ body {
   right: .5em;
   z-index: 40;
 }
-#map {
-  z-index: 35;
-}
-.sidebar {
-  z-index: 45;
-}
-.main-row {
-  position: relative;
-  top: 0;
-}
 min-submenu:hover {
   cursor: pointer;
 }
@@ -61,3 +69,4 @@ min-submenu:hover {
   border-radius: 4px;
   cursor: pointer;
 }
+*/

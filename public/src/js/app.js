@@ -1,4 +1,5 @@
 // helper functions
+/*
 function applyMargins() {
   var leftToggler = $(".min-submenu-left");
   var rightToggler = $(".min-submenu-right");
@@ -26,7 +27,7 @@ function applyMargins() {
   }
 }
 function isConstrained() {
-  return $("div.mid").width() == $(window).width();
+  return $("div.middle").width() == $(window).width();
 }
 function applyInitialUIState() {
   if (isConstrained()) {
@@ -36,8 +37,10 @@ function applyInitialUIState() {
     $(".min-submenu-right").fadeIn();
   }
 }
+*/
 // init application
 $(function() {
+  /*
   $(".sidebar-left .slide-submenu").on("click", function() {
     var thisElem = $(this);
     thisElem.closest(".sidebar-body").fadeOut("slide", function() {
@@ -65,6 +68,7 @@ $(function() {
     applyMargins();
   });
   $(window).on("resize", applyMargins);
+  */
   // create map
   var map = new ol.Map({
     target: "map",
@@ -78,6 +82,8 @@ $(function() {
       zoom: 2
     })
   });
+  /*
   applyInitialUIState();
   applyMargins();
+  */
 });
