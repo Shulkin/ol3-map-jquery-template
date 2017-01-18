@@ -51,13 +51,13 @@ body {
 /* Icons positions for left and right sidebars */
 .mini-submenu-left {
   position: absolute;
-  top: .5em;
+  top: 60px;
   left: .5em;
   z-index: 40;
 }
 .mini-submenu-right {
   position: absolute;
-  top: .5em;
+  top: 60px;
   right: .5em;
   z-index: 40;
 }
