@@ -1,9 +1,6 @@
-// helper functions
-/*
 function applyMargins() {
-  var leftToggler = $(".min-submenu-left");
-  var rightToggler = $(".min-submenu-right");
-  if (leftToggler.is(":visible")) {
+  // Place ol-zoom element near left sidebar
+  if ($(".mini-submenu-left").is(":visible")) {
     $("#map .ol-zoom")
     .css("margin-left", 0)
     .removeClass("zoom-top-opened-sidebar")
@@ -14,7 +11,8 @@ function applyMargins() {
     .removeClass("zoom-top-opened-sidebar")
     .removeClass("zoom-top-collapsed");
   }
-  if (rightToggler.is(":visible")) {
+  // Place ol-rotate near right sidebar
+  if ($(".mini-submenu-right").is(":visible")) {
     $("#map .ol-rotate")
     .css("margin-right", 0)
     .removeClass("zoom-top-opened-sidebar")
@@ -30,49 +28,58 @@ function isConstrained() {
   return $("div.middle").width() == $(window).width();
 }
 function applyInitialUIState() {
+  // on initial application state
   if (isConstrained()) {
+    // show sidebars
     $(".sidebar-left .sidebar-body").fadeOut("slide");
     $(".sidebar-right .sidebar-body").fadeOut("slide");
-    $(".min-submenu-left").fadeIn();
-    $(".min-submenu-right").fadeIn();
+    // hide minimized icons
+    $(".mini-submenu-left").fadeIn();
+    $(".mini-submenu-right").fadeIn();
   }
 }
-*/
 // init application
 $(function() {
-  /*
+  // create click handlers
+  // click on left sidebar slide-submenu
   $(".sidebar-left .slide-submenu").on("click", function() {
-    var thisElem = $(this);
-    thisElem.closest(".sidebar-body").fadeOut("slide", function() {
-      $(".min-submenu-left").fadeIn();
+    // hide left sidebar
+    $(this).closest(".sidebar-body").fadeOut("slide", function() {
+      // show minimized icon
+      $(".mini-submenu-left").fadeIn();
       applyMargins();
     });
   });
-  $(".min-submenu-left").on("click", function() {
-    var thisElem = $(this);
+  // click on left sidebar minimized icon
+  $(".mini-submenu-left").on("click", function() {
+    // show sidebar
     $(".sidebar-left .sidebar-body").toggle("slide");
-    thisElem.hide();
+    $(this).hide(); // hide icon
     applyMargins();
   });
+  // click on right sidebar slide-submenu
   $(".sidebar-right .slide-submenu").on("click", function() {
-    var thisElem = $(this);
-    thisElem.closest(".sidebar-body").fadeOut("slide", function() {
-      $(".min-submenu-right").fadeIn();
+    // hide right sidebar
+    $(this).closest(".sidebar-body").fadeOut("slide", function() {
+      // show minimized icon
+      $(".mini-submenu-right").fadeIn();
       applyMargins();
     });
   });
-  $(".min-submenu-right").on("click", function() {
-    var thisElem = $(this);
+  // click on right sidebar minimized icon
+  $(".mini-submenu-right").on("click", function() {
+    // show sidebar
     $(".sidebar-right .sidebar-body").toggle("slide");
-    thisElem.hide();
+    $(this).hide(); // hide icon
     applyMargins();
   });
+  // recalculate icons margins on window resize
   $(window).on("resize", applyMargins);
-  */
   // create map
   var map = new ol.Map({
     target: "map",
     layers: [
+      // define layers list
       new ol.layer.Tile({
         source: new ol.source.OSM()
       })
@@ -82,8 +89,7 @@ $(function() {
       zoom: 2
     })
   });
-  /*
+  // show sidebars by default
   applyInitialUIState();
   applyMargins();
-  */
 });

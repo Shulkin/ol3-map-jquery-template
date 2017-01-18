@@ -61,17 +61,10 @@ body {
   right: .5em;
   z-index: 40;
 }
-/*
+/* margins for ol-zoom element */
 .zoom-top-opened-sidebar {
   margin-top: 5px;
 }
 .zoom-top-collapsed {
   margin-top: 45px;
 }
-*/
-/*
-.main-row {
-  position: relative;
-  top: 0;
-}
-*/
