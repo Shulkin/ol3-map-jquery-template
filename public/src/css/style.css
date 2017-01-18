@@ -2,11 +2,14 @@ body {
   overflow: hidden;
 }
 #map {
+  /* Fixed position */
   position: absolute;
   top: 50px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+  /* Fixed map z-index */
+  z-index: 35;
 }
 #map .ol-zoom {
   font-size: 1.2em;
@@ -16,29 +19,24 @@ body {
   /* 50px from the top */
   margin-top: 50px;
 }
-/*
-.main-row {
-  position: relative;
-  top: 150px;
-}
-*/
-#map {
-  z-index: 35;
-}
-/* Left and right sidebars should be above map */
+/* Left and right sidebars should be above map z-index */
 .sidebar {
   z-index: 45;
   /* All margins 0.5em */
   margin: .5em;
 }
-/*
-.zoom-top-opened-sidebar {
-  margin-top: 5px;
+/* Chevron on sidebar header */
+.slide-submenu {
+  display: inline-block;
+  padding: 0 8px;
+  cursor: pointer;
 }
-.zoom-top-collapsed {
-  margin-top: 45px;
+.slide-submenu:hover {
+  /* Small highlight on hover */
+  opacity: 0.5;
 }
-.min-submenu {
+/* Minimized sidebar icon */
+.mini-submenu {
   display: none;
   background-color: rgba(255, 255, 255, 0.46);
   border: 1px solid rgba(0, 0, 0, 0.9);
@@ -47,26 +45,33 @@ body {
   width: 42px;
   text-align: center;
 }
-.min-submenu-left {
+.mini-submenu:hover {
+  cursor: pointer;
+}
+/* Icons positions for left and right sidebars */
+.mini-submenu-left {
   position: absolute;
-  top: 60px;
+  top: .5em;
   left: .5em;
   z-index: 40;
 }
-.min-submenu-right {
+.mini-submenu-right {
   position: absolute;
-  top: 60px;
+  top: .5em;
   right: .5em;
   z-index: 40;
 }
-min-submenu:hover {
-  cursor: pointer;
+/*
+.zoom-top-opened-sidebar {
+  margin-top: 5px;
 }
-.slide-submenu {
-  background: rgba(0, 0, 0, 0.45);
-  display: inline-block;
-  padding: 0 8px;
-  border-radius: 4px;
-  cursor: pointer;
+.zoom-top-collapsed {
+  margin-top: 45px;
+}
+*/
+/*
+.main-row {
+  position: relative;
+  top: 0;
 }
 */
