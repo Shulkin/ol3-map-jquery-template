@@ -11,10 +11,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 // === Configure ===
 // set up express middleware
-/*
-// uncomment this when set up the favicon
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
-*/
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/bower_components", express.static(path.join(__dirname, "bower_components")));
 app.use(bodyParser.json());
