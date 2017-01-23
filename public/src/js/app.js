@@ -52,10 +52,11 @@ $(function() {
   // click on left sidebar minimized icon
   $(".mini-submenu-left").on("click", function() {
     // show sidebar
-    $(".sidebar-left .sidebar-body").toggle("slide", (function() {
+    $(".sidebar-left .sidebar-body").fadeIn("slide", (function() {
       $(this).hide(); // hide icon
       applyMargins();
-    }).bind(this)); // pass mini-submenu-left as 'this' to callback
+    // bind mini-submenu-left as 'this' to callback
+    }).bind(this));
   });
   // click on right sidebar slide-submenu
   $(".sidebar-right .slide-submenu").on("click", function() {
@@ -69,19 +70,16 @@ $(function() {
   // click on right sidebar minimized icon
   $(".mini-submenu-right").on("click", function() {
     // show sidebar
-    $(".sidebar-right .sidebar-body").toggle("slide", (function() {
+    $(".sidebar-right .sidebar-body").fadeIn("slide", (function() {
       $(this).hide(); // hide icon
       applyMargins();
-    }).bind(this)); // pass mini-submenu-right as 'this' to callback
+      // bind mini-submenu-right as 'this' to callback
+    }).bind(this));
   });
-  // collapse content in sidebar panel
-  $(".panel-collapse").on("hidden.bs.collapse", function() {
-    applyMargins();
-  });
-  // expand content in sidebar panel
-  $(".panel-collapse").on("shown.bs.collapse", function() {
-    applyMargins();
-  });
+  // on collapse content in sidebar panel
+  $(".panel-collapse").on("hidden.bs.collapse", applyMargins);
+  // on expand content in sidebar panel
+  $(".panel-collapse").on("shown.bs.collapse", applyMargins);
   // calculate margins for openlayers3 controls on window resize
   $(window).on("resize", applyMargins);
   // create map

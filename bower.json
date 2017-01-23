@@ -25,7 +25,6 @@
     "jquery": "^3.1.1",
     "bootstrap": "^3.3.7",
     "openlayers3": "ol3-bower#^3.18.2",
-    "components-font-awesome": "^4.7.0",
-    "jquery-ui": "^1.12.1"
+    "components-font-awesome": "^4.7.0"
   }
 }
