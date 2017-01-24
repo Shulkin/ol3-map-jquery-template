@@ -2,40 +2,29 @@ function applyMargins() {
   // ol-zoom near left sidebar
   if ($(".mini-submenu-left").is(":visible")) {
     $("#map .ol-zoom") // sidebar closed
-      .css("margin-left", 0)
+      .css("margin-left", 0) // 0px from left
+      // navbar height can vary
       .css("margin-top", $(".navbar").height())
+      // 0.4em from bottom of mini-icon
       .css("margin-top", "-=10px").css("margin-top", "+=.4em");
-      /*
-      .removeClass("zoom-top-opened-sidebar")
-      .addClass("zoom-top-collapsed");
-      */
   } else {
     $("#map .ol-zoom") // sidebar opened
+      // 0.4em from right corner of left sidebar
       .css("margin-left", $(".sidebar-left").width()).css("margin-left", "+=.4em")
       .css("margin-top", $(".navbar").height()).css("margin-top", "-=50px");
-      /*
-      .removeClass("zoom-top-opened-sidebar")
-      .removeClass("zoom-top-collapsed");
-      */
   }
   // ol-rotate near right sidebar
   if ($(".mini-submenu-right").is(":visible")) {
     $("#map .ol-rotate")
-      .css("margin-right", 0)
+      .css("margin-right", 0) // 0px from right
       .css("margin-top", $(".navbar").height())
+      // 0.4em from bottom of mini-icon
       .css("margin-top", "-=10px").css("margin-top", "+=.4em");
-      /*
-      .removeClass("zoom-top-opened-sidebar")
-      .addClass("zoom-top-collapsed");
-      */
   } else {
     $("#map .ol-rotate")
+      // 0.4em from left corner of right sidebar
       .css("margin-right", $(".sidebar-right").width()).css("margin-right", "+=.4em")
       .css("margin-top", $(".navbar").height()).css("margin-top", "-=50px");
-      /*
-      .removeClass("zoom-top-opened-sidebar")
-      .removeClass("zoom-top-collapsed");
-      */
   }
   // set offset margin depending on navbar height
   $(".navbar-offset").css("margin-top", $(".navbar").height());

@@ -1,9 +1,6 @@
 body {
   overflow: hidden;
 }
-.navbar {
-  opacity: 0.5;
-}
 #map {
   /* Fixed position */
   position: absolute;
@@ -67,12 +64,3 @@ body {
 .mini-submenu-right {
   right: .5em;
 }
-/* Margins for ol-zoom element */
-/*
-.zoom-top-opened-sidebar {
-  margin-top: .5em;
-}
-.zoom-top-collapsed {
-  margin-top: calc(.5em + 45px);
-}
-*/
