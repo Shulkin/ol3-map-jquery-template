@@ -1,28 +1,43 @@
 function applyMargins() {
   // ol-zoom near left sidebar
   if ($(".mini-submenu-left").is(":visible")) {
-    $("#map .ol-zoom")
+    $("#map .ol-zoom") // sidebar closed
       .css("margin-left", 0)
+      .css("margin-top", $(".navbar").height())
+      .css("margin-top", "-=10px").css("margin-top", "+=.4em");
+      /*
       .removeClass("zoom-top-opened-sidebar")
       .addClass("zoom-top-collapsed");
+      */
   } else {
-    $("#map .ol-zoom")
-      .css("margin-left", $(".sidebar-left").width())
+    $("#map .ol-zoom") // sidebar opened
+      .css("margin-left", $(".sidebar-left").width()).css("margin-left", "+=.4em")
+      .css("margin-top", $(".navbar").height()).css("margin-top", "-=50px");
+      /*
       .removeClass("zoom-top-opened-sidebar")
       .removeClass("zoom-top-collapsed");
+      */
   }
   // ol-rotate near right sidebar
   if ($(".mini-submenu-right").is(":visible")) {
     $("#map .ol-rotate")
       .css("margin-right", 0)
+      .css("margin-top", $(".navbar").height())
+      .css("margin-top", "-=10px").css("margin-top", "+=.4em");
+      /*
       .removeClass("zoom-top-opened-sidebar")
       .addClass("zoom-top-collapsed");
+      */
   } else {
     $("#map .ol-rotate")
-      .css("margin-right", $(".sidebar-right").width())
+      .css("margin-right", $(".sidebar-right").width()).css("margin-right", "+=.4em")
+      .css("margin-top", $(".navbar").height()).css("margin-top", "-=50px");
+      /*
       .removeClass("zoom-top-opened-sidebar")
       .removeClass("zoom-top-collapsed");
+      */
   }
+  // set offset margin depending on navbar height
   $(".navbar-offset").css("margin-top", $(".navbar").height());
 }
 function isConstrained() {
@@ -92,6 +107,7 @@ $(function() {
     ],
     view: new ol.View({
       center: [0, 0],
+      rotation: Math.PI / 6,
       zoom: 2
     })
   });
