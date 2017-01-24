@@ -23,6 +23,7 @@ function applyMargins() {
       .removeClass("zoom-top-opened-sidebar")
       .removeClass("zoom-top-collapsed");
   }
+  $(".navbar-offset").css("margin-top", $(".navbar").height());
 }
 function isConstrained() {
   return $("div.middle").width() == $(window).width();
@@ -51,12 +52,11 @@ $(function() {
   });
   // click on left sidebar minimized icon
   $(".mini-submenu-left").on("click", function() {
-    // show sidebar
-    $(".sidebar-left .sidebar-body").fadeIn("slide", (function() {
-      $(this).hide(); // hide icon
-      applyMargins();
-    // bind mini-submenu-left as 'this' to callback
-    }).bind(this));
+    // hide icon
+    $(this).fadeOut(function() {
+      // show sidebar
+      $(".sidebar-left .sidebar-body").fadeIn("slide", applyMargins);
+    });
   });
   // click on right sidebar slide-submenu
   $(".sidebar-right .slide-submenu").on("click", function() {
@@ -69,12 +69,11 @@ $(function() {
   });
   // click on right sidebar minimized icon
   $(".mini-submenu-right").on("click", function() {
-    // show sidebar
-    $(".sidebar-right .sidebar-body").fadeIn("slide", (function() {
-      $(this).hide(); // hide icon
-      applyMargins();
-      // bind mini-submenu-right as 'this' to callback
-    }).bind(this));
+    // hide icon
+    $(this).fadeOut(function() {
+      // show sidebar
+      $(".sidebar-right .sidebar-body").fadeIn("slide", applyMargins);
+    });
   });
   // on collapse content in sidebar panel
   $(".panel-collapse").on("hidden.bs.collapse", applyMargins);
