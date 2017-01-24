@@ -6,16 +6,25 @@ module.exports = function(grunt) {
       // in parent js folder and its subfolders
       all: ["public/src/js/**/*.js"]
     },
-    // minify all js files into app.min.js
-    uglify: {
+    requirejs: {
       build: {
-        files: {
-          "public/dst/js/app.min.js": [
-            "public/src/js/**/*.js",
-          ]
+        options: {
+          baseUrl: "",
+          mainConfigFile: "",
+          optimize: "uglify",
         }
       }
     },
+    // minify all js files into app.min.js
+    //uglify: {
+    //  build: {
+    //    files: {
+    //      "public/dst/js/app.min.js": [
+    //        "public/src/js/**/*.js",
+    //      ]
+    //    }
+    //  }
+    //},
     // === CSS Tasks ===
     // minify css files into style.min.css
     cssmin: {
@@ -35,7 +44,8 @@ module.exports = function(grunt) {
       },
       js: {
         files: ["public/src/js/**/*.js"],
-        tasks: ["jshint", "uglify"]
+        //tasks: ["jshint", "uglify"]
+        tasks: ["jshint", "requirejs"]
       }
     },
     // restart server on changes
@@ -53,12 +63,15 @@ module.exports = function(grunt) {
     }
   });
   // load tasks
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks("grunt-contrib-jshint");
+  //--
+  //grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks("grunt-contrib-requirejs")
+  //--
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-nodemon");
+  grunt.loadNpmTasks("grunt-concurrent");
   // register them
-  grunt.registerTask('default', ["cssmin", "jshint", "uglify", "concurrent"]);
+  grunt.registerTask("default", ["cssmin", "jshint", "uglify", "concurrent"]);
 };
