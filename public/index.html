@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>ol3-map-jquery-template</title>
     <!-- CSS -->
+    <!-- build:css /css/libs.combined.min.css -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.min.css">
     <!-- OpenLayers 3 style -->
     <link rel="stylesheet" href="../bower_components/openlayers3/ol.css"/>
-    <!-- Custom CSS classes, minified -->
-    <link rel="stylesheet" href="dst/css/style.min.css">
+    <!-- endbuild -->
+    <!-- Source CSS -->
+    <!-- build:css /css/style.combined.min.css -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- endbuild -->
     <!-- JavaScript -->
     <!-- jQuery -->
     <!-- <script src="../bower_components/jquery/dist/jquery.min.js"></script> -->
@@ -24,6 +28,8 @@
     <!-- Source, minified -->
     <!-- <script src="dst/js/app.min.js"></script> -->
     <!-- Load script "dst/js/app.min.js" as entry point -->
+    <!-- Source JavaScript -->
+    <script data-main="js/app.build.min" src="../bower_components/requirejs/require.js"></script>
   </head>
   <body>
     <!-- Navigation bar -->

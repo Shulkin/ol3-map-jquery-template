@@ -1,3 +1,15 @@
+define([
+  "jquery",
+  "underscore"
+], function($, _) {
+  var initialize = function() {
+    console.log("Initialize application");
+  };
+  return {
+    initialize: initialize
+  };
+});
+/*
 function applyMargins() {
   // ol-zoom near left sidebar
   if ($(".mini-submenu-left").is(":visible")) {
@@ -104,3 +116,4 @@ $(function() {
   applyInitialUIState();
   applyMargins();
 });
+*/

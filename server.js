@@ -19,9 +19,9 @@ app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({type: "application/vnd.api+json"}));
 app.use(methodOverride());
-// default route to index.html
+// default route to build/index.html
 app.get("*", function(req ,res) {
-  res.sendFile("./public/index.html");
+  res.sendFile("build/index.html");
 });
 // === Start server ===
 app.listen(port);
