@@ -21,7 +21,7 @@ module.exports = function(grunt) {
           // main config file for requirejs
           mainConfigFile: "public/js/main.js",
           findNestedDependencies: true,
-          //optimize: "uglify", // use uglify
+          optimize: "uglify", // use uglify
           // requirejs config module name
           name: "public/js/main",
           // output path
@@ -30,14 +30,14 @@ module.exports = function(grunt) {
       }
     },
     // minify css files into style.min.css
-    //cssmin: {
-    //  build: {
-    //    files: {
-    //      // all css files in folder and subfolders
-    //      "build/css/style.min.css": "public/css/**/*.css"
-    //    }
-    //  }
-    //},
+    cssmin: {
+      build: {
+        files: {
+          // all css files in folder and subfolders
+          "build/css/style.combined.min.css": "public/css/**/*.css"
+        }
+      }
+    },
     // copy all other files
     copy: {
       main: {
@@ -85,29 +85,29 @@ module.exports = function(grunt) {
       }
     },
     // watch change css and js files and process above tasks
-    watch: {
-      css: {
-        files: ["public/src/css/**/*.css"],
-        tasks: ["cssmin"]
-      },
-      js: {
-        files: ["public/src/js/**/*.js"],
-        tasks: ["jshint", "requirejs"]
-      }
-    },
+    //watch: {
+    //  css: {
+    //    files: ["public/css/**/*.css"],
+    //    tasks: ["cssmin"]
+    //  },
+    //  js: {
+    //    files: ["public/js/**/*.js"],
+    //    tasks: ["jshint", "requirejs"]
+    //  }
+    //},
     // restart server on changes
-    nodemon: {
-      dev: {
-        script: "server.js"
-      }
-    },
+    //nodemon: {
+    //  dev: {
+    //    script: "server.js"
+    //  }
+    //},
     // run watch and nodemon at the same time
-    concurrent: {
-      options: {
-        logConcurrentOutput: true
-      },
-      tasks: ["nodemon", "watch"]
-    }
+    //concurrent: {
+    //  options: {
+    //    logConcurrentOutput: true
+    //  },
+    //  tasks: ["nodemon", "watch"]
+    //}
   });
   // load tasks
   grunt.loadNpmTasks("grunt-contrib-jshint");
@@ -128,13 +128,16 @@ module.exports = function(grunt) {
     "requirejs", // compile js modules
     "copy", // move other data files to build folder
     "imagemin", // optimize images and copy to build folder
+    "cssmin",
     "useminPrepare",
     "concat",
     "cssmin",
     "usemin"
   ]);
+  /*
   grunt.registerTask("default", [ // default run
     "build", // build application
     "concurrent" // start watch
   ]);
+  */
 };
