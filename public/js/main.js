@@ -1,15 +1,26 @@
 require.config({
+  // explicitly state module dependenices
   shim: {
+    // load underscore and jquery before backbone
+    backbone: {
+      deps: ["underscore", "jquery"]
+    }, // et cetera
     bootstrap: {
       deps: ["jquery"]
     }
   },
+  // all libraries
   paths: {
+    backbone: "../bower_components/backbone/backbone-min",
+    bootstrap: "../bower_components/bootstrap/dist/js/bootstrap.min",
     jquery: "../bower_components/jquery/dist/jquery.min",
     openlayers3: "../bower_components/openlayers3/ol",
-    bootstrap: "../bower_components/bootstrap/dist/js/bootstrap.min"
+    underscore: "../bower_components/underscore/underscore-min"
   }
 });
-require(["app", "bootstrap"], function(App) {
+require([
+  "app",
+  // bootstrap should be last
+  "bootstrap"], function(App) {
   App.initialize();
 });
