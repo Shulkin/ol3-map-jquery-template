@@ -1,7 +1,14 @@
 define([
+  /*
   "jquery",
-  "openlayers3"
-], function($, ol) {
+  "openlayers3",
+  */
+  "views/map-view", // openlayers3 map
+  "views/navbar-view", // menu navbar
+  "views/sidebar-left-view", // left sidebar
+  "views/sidebar-right-view" // right sidebar
+], function(/*$, ol, */Map, Navbar, LeftSidebar, RightSidebar) {
+  /*
   var applyMargins = function() {
     // ol-zoom near left sidebar
     if ($(".mini-submenu-left").is(":visible")) {
@@ -105,13 +112,20 @@ define([
     // calculate margins for openlayers3 controls on window resize
     $(window).on("resize", applyMargins);
   };
+  */
   var initialize = function() {
     console.log("Initialize application");
+    // render navbar call internally
+    var navbar = new Navbar();
+    // create map
+    // create sidebars
+    /*
     createHandlers();
     createMap();
     // show sidebars by default
     applyInitialUIState();
     applyMargins();
+    */
   };
   return {
     initialize: initialize
