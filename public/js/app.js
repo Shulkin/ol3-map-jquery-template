@@ -1,13 +1,9 @@
 define([
-  /*
-  "jquery",
-  "openlayers3",
-  */
   "views/map-view", // openlayers3 map
   "views/navbar-view", // menu navbar
   "views/sidebar-left-view", // left sidebar
   "views/sidebar-right-view" // right sidebar
-], function(/*$, ol, */Map, Navbar, LeftSidebar, RightSidebar) {
+], function(Map, Navbar, LeftSidebar, RightSidebar) {
   /*
   var applyMargins = function() {
     // ol-zoom near left sidebar
@@ -114,11 +110,13 @@ define([
   };
   */
   var initialize = function() {
-    console.log("Initialize application");
-    // render navbar call internally
+    // render navbar
     var navbar = new Navbar();
-    // create map
+    // create openlayers3 map
+    var map = new Map();
     // create sidebars
+    var leftSidebar = new LeftSidebar();
+    var rightSidebar = new RightSidebar();
     /*
     createHandlers();
     createMap();

@@ -17,7 +17,7 @@ require.config({
     openlayers3: "../bower_components/openlayers3/ol",
     underscore: "../bower_components/underscore/underscore-min",
     // html templates
-    templates: "./templates"
+    templates: "../templates"
   }
 });
 require([
