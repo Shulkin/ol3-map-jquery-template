@@ -8,11 +8,9 @@ define([
   var PropertiesView = Backbone.View.extend({
     // do not have predefined $el
     initialize: function() {
-      console.log("properties: initialize");
       this.render();
     },
     render: function() {
-      console.log("properties: render");
       var compiledTemplate = _.template(PropertiesTemplate);
       this.$el.html(compiledTemplate);
     }

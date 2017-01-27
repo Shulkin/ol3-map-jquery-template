@@ -11,12 +11,10 @@ define([
   var SidebarView = Backbone.View.extend({
     el: $("#accordion-left"),
     initialize: function() {
-      console.log("sidebarLeft: initialize");
       // call for render
       this.render();
     },
     render: function() {
-      console.log("sidebarLeft: render");
       var compiledTemplate = _.template(LeftSidebarTemplate);
       this.$el.html(compiledTemplate);
       // append nested templates
