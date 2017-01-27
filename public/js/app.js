@@ -4,7 +4,6 @@ define([
   "views/sidebar-left-view", // left sidebar
   "views/sidebar-right-view" // right sidebar
 ], function(Map, Navbar, LeftSidebar, RightSidebar) {
-  /*
   var applyMargins = function() {
     // ol-zoom near left sidebar
     if ($(".mini-submenu-left").is(":visible")) {
@@ -36,22 +35,7 @@ define([
     // set offset margin depending on navbar height
     $(".navbar-offset").css("margin-top", $(".navbar").height());
   };
-  var createMap = function() {
-    var map = new ol.Map({
-      target: "map",
-      layers: [
-        // define layers list
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ],
-      view: new ol.View({
-        center: [0, 0],
-        rotation: Math.PI / 6,
-        zoom: 2
-      })
-    });
-  };
+  /*
   var isConstrained = function() {
     return $("div.middle").width() == $(window).width();
   };
@@ -115,8 +99,12 @@ define([
     // create openlayers3 map
     var map = new Map();
     // create sidebars
-    var leftSidebar = new LeftSidebar();
-    var rightSidebar = new RightSidebar();
+    var leftSidebar = new LeftSidebar({
+      onCollapse: applyMargins
+    });
+    var rightSidebar = new RightSidebar({
+      onCollapse: applyMargins
+    });
     /*
     createHandlers();
     createMap();

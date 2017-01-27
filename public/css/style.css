@@ -23,7 +23,7 @@ body {
   /* 50px from the top dy default */
   margin-top: 50px;
 }
-.sidebar-offset {
+.top-offset-05-em {
   margin-top: .5em;
 }
 /* Left and right sidebars should be above map z-index */
