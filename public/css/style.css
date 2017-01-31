@@ -67,3 +67,11 @@ body {
 .mini-submenu-right {
   right: .5em;
 }
+#taskpane .panel-body {
+  max-height: 200px;
+  overflow-y: auto;
+}
+#properties .panel-body {
+  max-height: 200px;
+  overflow-y: auto;
+}
