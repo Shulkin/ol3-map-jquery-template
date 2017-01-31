@@ -92,18 +92,20 @@ define([
     },
     // click on left sidebar minimized icon
     onMiniSubmenuLeftClick: function() {
+      var self = this;
       // hide icon
       $(".mini-submenu-left").fadeOut(function() {
         // show sidebar
-        $(".sidebar-left .sidebar-body").fadeIn("slide", this.applyMargins);
+        $(".sidebar-left .sidebar-body").fadeIn("slide", self.applyMargins);
       });
     },
     // click on right sidebar minimized icon
     onMiniSubmenuRightClick: function() {
+      var self = this;
       // hide icon
       $(".mini-submenu-right").fadeOut(function() {
         // show sidebar
-        $(".sidebar-right .sidebar-body").fadeIn("slide", this.applyMargins);
+        $(".sidebar-right .sidebar-body").fadeIn("slide", self.applyMargins);
       });
     }
   });

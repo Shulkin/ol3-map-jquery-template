@@ -2,7 +2,7 @@ define([
   "jquery",
   "backbone",
   "underscore",
-  // nested panels
+  // nested views
   "views/home/sidebars/sidebar-right/content/tasks-view",
   // path to left sidebar html template
   "text!templates/home/sidebars/sidebar-right/sidebar-right.html"
