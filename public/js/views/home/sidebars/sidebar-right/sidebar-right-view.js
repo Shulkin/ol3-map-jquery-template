@@ -7,14 +7,15 @@ define([
   // path to left sidebar html template
   "text!templates/sidebar-right.html"
 ], function($, Backbone, _, Tasks, RightSidebarTemplate) {
-  var SidebarView = Backbone.View.extend({
-    el: $("#accordion-right"),
+  return Backbone.View.extend({
+    el: $("#sidebar-right"),
     events: {
       "click .slide-submenu": "onSlideClick"
     },
     initialize: function(options) {
+      // save callback
       this.collapseCallback = options.onCollapse;
-      // call for render
+      // render on create
       this.render();
     },
     render: function() {
@@ -35,5 +36,4 @@ define([
       });
     }
   });
-  return SidebarView;
 });

@@ -3,7 +3,7 @@ define([
   "backbone",
   "openlayers3"
 ], function($, Backbone, ol) {
-  var MapView = Backbone.View.extend({
+  return Backbone.View.extend({
     initialize: function() {
       var map = new ol.Map({
         target: "map",
@@ -21,5 +21,4 @@ define([
       });
     }
   });
-  return MapView;
 });

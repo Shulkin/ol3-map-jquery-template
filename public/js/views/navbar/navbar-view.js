@@ -12,6 +12,7 @@ define([
       this.render();
     },
     render: function() {
+      // compile template
       var compiledTemplate = _.template(NavbarTemplate);
       this.$el.html(compiledTemplate);
     }
