@@ -24,5 +24,6 @@ require([
   "app",
   // bootstrap should be last
   "bootstrap"], function(App) {
+  // initialize application and render everything
   App.initialize();
 });
