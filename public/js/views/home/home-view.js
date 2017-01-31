@@ -20,7 +20,7 @@ define([
     },
     applyInitialUIState: function() {
       // on initial application state
-      if (isConstrained()) {
+      if (this.isConstrained()) {
         // show sidebars
         $(".sidebar-left .sidebar-body").fadeOut("slide");
         $(".sidebar-right .sidebar-body").fadeOut("slide");
@@ -60,11 +60,23 @@ define([
       // set offset margin depending on navbar height
       $(".navbar-offset").css("margin-top", $(".navbar").height());
     },
+    createHandlers: function() {
+      // on collapse content in sidebar panel
+      $(".panel-collapse").on("hidden.bs.collapse", this.applyMargins);
+      // on expand content in sidebar panel
+      $(".panel-collapse").on("shown.bs.collapse", this.applyMargins);
+      // calculate margins for openlayers3 controls on window resize
+      $(window).on("resize", this.applyMargins);
+    },
     initialize: function() {
       // render on create
       this.render();
       // create openlayers3 map
       var map = new Map();
+      // set initial state
+      this.applyInitialUIState();
+      // set additional event handlers
+      this.createHandlers();
     },
     render: function() {
       // compile template
