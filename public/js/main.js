@@ -16,6 +16,8 @@ require.config({
     jquery: "../bower_components/jquery/dist/jquery.min",
     openlayers3: "../bower_components/openlayers3/ol",
     underscore: "../bower_components/underscore/underscore-min",
+    // perfect-scrollbar by noraesae (Hyunje Jun)
+    perfectScrollbarJQuery: "../bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery",
     // html templates
     templates: "../templates"
   }

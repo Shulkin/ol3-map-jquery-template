@@ -66,7 +66,12 @@ define([
       // on expand content in sidebar panel
       $(".panel-collapse").on("shown.bs.collapse", this.applyMargins);
       // calculate margins for openlayers3 controls on window resize
-      $(window).on("resize", this.applyMargins);
+      var self = this;
+      $(window).on("resize", function() {
+        self.applyMargins();
+        // also, update perfect scrollbar in all panels
+        $(".panel-body").perfectScrollbar("update");
+      });
     },
     initialize: function() {
       // render on create
