@@ -73,10 +73,11 @@ define([
       this.render();
       // create openlayers3 map
       var map = new Map();
-      // set initial state
-      this.applyInitialUIState();
-      // set additional event handlers
+      // create additional event handlers
       this.createHandlers();
+      // show sidebars by default
+      this.applyInitialUIState();
+      this.applyMargins();
     },
     render: function() {
       // compile template
