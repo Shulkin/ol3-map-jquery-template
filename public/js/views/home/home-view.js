@@ -3,9 +3,9 @@ define([
   "backbone",
   "underscore",
   // nested views
-  "views/map/map-view", // openlayers3 map
-  "views/sidebars/sidebar-left/sidebar-left-view", // left sidebar
-  "views/sidebars/sidebar-right/sidebar-right-view", // right sidebar
+  "views/home/map/map-view", // openlayers3 map
+  "views/home/sidebars/sidebar-left/sidebar-left-view", // left sidebar
+  "views/home/sidebars/sidebar-right/sidebar-right-view", // right sidebar
   // path to home html templates
   "text!templates/home/home.html"
 ], function($, Backbone, _, Map, LeftSidebar, RightSidebar, HomeTemplate) {
@@ -71,12 +71,12 @@ define([
       var compiledTemplate = _.template(HomeTemplate);
       this.$el.html(compiledTemplate);
       // append nested views
-      this.$("sidebar-left").html(new LeftSidebar(
+      this.$("#sidebar-left").html(new LeftSidebar({
         onCollapse: this.applyMargins
-      ).$el);
-      this.$("sidebar-right").html(new RightSidebar(
+      }).$el);
+      this.$("#sidebar-right").html(new RightSidebar({
         onCollapse: this.applyMargins
-      ).$el);
+      }).$el);
     },
     // click on left sidebar minimized icon
     onMiniSubmenuLeftClick: function() {

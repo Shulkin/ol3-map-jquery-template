@@ -3,6 +3,7 @@ define([
   "backbone",
   "openlayers3"
 ], function($, Backbone, ol) {
+  // nested in home view
   return Backbone.View.extend({
     initialize: function() {
       var map = new ol.Map({

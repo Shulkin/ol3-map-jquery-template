@@ -3,12 +3,13 @@ define([
   "backbone",
   "underscore",
   // nested panels
-  "views/tasks-view",
+  "views/home/sidebars/sidebar-right/content/tasks-view",
   // path to left sidebar html template
-  "text!templates/sidebar-right.html"
+  "text!templates/home/sidebars/sidebar-right/sidebar-right.html"
 ], function($, Backbone, _, Tasks, RightSidebarTemplate) {
+  // nested in home view
   return Backbone.View.extend({
-    el: $("#sidebar-right"),
+    // do not have predefined $el
     events: {
       "click .slide-submenu": "onSlideClick"
     },
@@ -19,15 +20,16 @@ define([
       this.render();
     },
     render: function() {
+      // compile template
       var compiledTemplate = _.template(RightSidebarTemplate);
       this.$el.html(compiledTemplate);
-      // append nested templates
+      // append nested views
       this.$("#tasks-panel").html(new Tasks().$el);
     },
     onSlideClick: function() {
-      // hide right sidebar
-      var self = this;
       // only sidebar-body of right sidebar handle this click
+      var self = this;
+      // hide right sidebar
       this.$(".sidebar-body").fadeOut("slide", function() {
         // show minimized icon
         $(".mini-submenu-right").fadeIn();
