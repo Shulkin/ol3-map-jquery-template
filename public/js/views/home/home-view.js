@@ -28,6 +28,8 @@ define([
         $(".mini-submenu-left").fadeIn();
         $(".mini-submenu-right").fadeIn();
       }
+      // update scrollbars
+      this.updatePerfectScrollbar();
     },
     applyMargins: function() {
       // ol-zoom near left sidebar
@@ -60,6 +62,10 @@ define([
       // set offset margin depending on navbar height
       $(".navbar-offset").css("margin-top", $(".navbar").height());
     },
+    updatePerfectScrollbar: function() {
+      // update perfect scrollbar in all panels
+      $(".panel-body").perfectScrollbar("update");
+    },
     createHandlers: function() {
       // on collapse content in sidebar panel
       $(".panel-collapse").on("hidden.bs.collapse", this.applyMargins);
@@ -69,8 +75,7 @@ define([
       var self = this;
       $(window).on("resize", function() {
         self.applyMargins();
-        // also, update perfect scrollbar in all panels
-        $(".panel-body").perfectScrollbar("update");
+        self.updatePerfectScrollbar();
       });
     },
     initialize: function() {

@@ -2,7 +2,7 @@ define([
   "jquery",
   "backbone",
   "underscore",
-  "perfectScrollbarJQuery",
+  "perfectScrollbar",
   // path to html template
   "text!templates/home/sidebars/sidebar-left/content/properties.html"
 ], function($, Backbone, _, Ps, PropertiesTemplate) {
@@ -14,8 +14,6 @@ define([
       this.render();
       // put perfect scrollbar on panel body
       this.$(".panel-body").perfectScrollbar();
-      // update immediately
-      this.$(".panel-body").perfectScrollbar("update");
     },
     render: function() {
       // compile template
