@@ -13,7 +13,7 @@ define([
     events: {
       // one handler for both expand and collapse havbar
       "shown.bs.collapse #navbar-body": "onToggleNavbar",
-      "hidden.bs.collapse #navbar-body": "onToggleNavbar",
+      "hidden.bs.collapse #navbar-body": "onToggleNavbar"
     },
     initialize: function() {
       // render on create
@@ -26,7 +26,6 @@ define([
       // attach local window resize handler
       var self = this;
       $(window).on("resize", function() {
-        console.log("navbar-view: resize window");
         self.$("#navbar-body").perfectScrollbar("update");
       });
     },

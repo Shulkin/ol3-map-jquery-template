@@ -47,19 +47,11 @@ define([
       // set offset margin depending on navbar height
       $(".navbar-offset").css("margin-top", $(".navbar").height());
     },
-    onPanelCollapse: function() {
-      // on collapse content in sidebar panel
-      $(".panel-collapse").on("hidden.bs.collapse", this.applyMargins);
-      // on expand content in sidebar panel
-      $(".panel-collapse").on("shown.bs.collapse", this.applyMargins);
-    },
     onWindowResize: function() {
       // calculate margins for openlayers3 controls on window resize
       var self = this;
       $(window).on("resize", function() {
-        console.log("global: resize window");
         self.applyMargins();
-        //self.updatePerfectScrollbar();
       });
     },
     fireWindowResizeEvent: function() {

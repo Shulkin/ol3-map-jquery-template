@@ -26,8 +26,6 @@ define([
       Global.applyInitial();
       // attach window resize event handler
       Global.onWindowResize();
-      // attach event handlers for toggle content panels in sidebars
-      Global.onPanelCollapse();
       // trigger resize event to update all scrollbars
       Global.fireWindowResizeEvent(); // also, call applyMargins
     },
@@ -41,11 +39,16 @@ define([
     },
     // click on left sidebar minimized icon
     onMiniSubmenuLeftClick: function() {
+      var self = this;
       // hide icon
       $(".mini-submenu-left").fadeOut(function() {
         // show sidebar
         $(".sidebar-left .sidebar-body").fadeIn(
-          "slide", Global.applyMargins
+          "slide", function() {
+            Global.applyMargins();
+            // update scrollbars on nested panels
+            self.$("#sidebar-left .panel-body").perfectScrollbar("update");
+          }
         );
       });
     },
@@ -55,7 +58,11 @@ define([
       $(".mini-submenu-right").fadeOut(function() {
         // show sidebar
         $(".sidebar-right .sidebar-body").fadeIn(
-          "slide", Global.applyMargins
+          "slide", function() {
+            Global.applyMargins();
+            // update scrollbars on nested panels
+            self.$("#sidebar-right .panel-body").perfectScrollbar("update");
+          }
         );
       });
     }
