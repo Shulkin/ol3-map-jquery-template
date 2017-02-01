@@ -1,10 +1,23 @@
-#taskpane .panel-body {
-  position: relative;
-  max-height: 200px;
+#layers .panel-body {
+  height: 120px;
+  min-height: 120px;
+  max-height: 360px;
   overflow: auto;
 }
 #properties .panel-body {
   position: relative;
-  max-height: 200px;
+  height: 180px;
+  min-height: 180px;
+  max-height: 480px;
   overflow: auto;
+}
+#taskpane .panel-body {
+  position: relative;
+  height: 180px;
+  min-height: 180px;
+  max-height: 480px;
+  overflow: auto;
+}
+.panel-resizable {
+  resize: vertical;
 }
