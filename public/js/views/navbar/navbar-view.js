@@ -32,17 +32,11 @@ define([
       console.log("navbar collapsed");
       this.$("#navbar-body").perfectScrollbar("update");
       Global.applyMargins();
-      /*
-      applyMargins should be here!
-      */
     },
     onExpandNavbar: function() {
       console.log("navbar expanded");
       this.$("#navbar-body").perfectScrollbar("update");
       Global.applyMargins();
-      /*
-      applyMargins should be here!
-      */
     }
   });
 });
