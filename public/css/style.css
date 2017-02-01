@@ -77,3 +77,6 @@ body {
   max-height: 200px;
   overflow: auto;
 }
+#navbar-body {
+  position: relative;
+}
