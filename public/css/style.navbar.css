@@ -1,0 +1,8 @@
+#navbar-body {
+  position: relative;
+}
+/* Offset indicates where navbar ends and map starts */
+.navbar-offset {
+  /* 50px from the top dy default */
+  margin-top: 50px;
+}

@@ -1,0 +1,10 @@
+#taskpane .panel-body {
+  position: relative;
+  max-height: 200px;
+  overflow: auto;
+}
+#properties .panel-body {
+  position: relative;
+  max-height: 200px;
+  overflow: auto;
+}

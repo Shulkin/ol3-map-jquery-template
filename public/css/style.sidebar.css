@@ -1,0 +1,16 @@
+/* Left and right sidebars should be above map z-index */
+.sidebar {
+  z-index: 45;
+  /* All margins 0.5em */
+  margin: .5em;
+}
+/* Chevron on sidebar header */
+.slide-submenu {
+  display: inline-block;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.slide-submenu:hover {
+  /* Small highlight on hover */
+  opacity: 0.5;
+}
