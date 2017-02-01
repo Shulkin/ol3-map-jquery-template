@@ -12,7 +12,7 @@ define([
   return Backbone.View.extend({
     // do not have predefined $el
     events: {
-      "shown.bs.collapse .panel-collapse": "onTogglePanel"
+      "shown.bs.collapse .panel-collapse": "onTogglePanel",
       "hidden.bs.collapse .panel-collapse": "onTogglePanel"
     },
     initialize: function() {
