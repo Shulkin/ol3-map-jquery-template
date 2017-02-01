@@ -2,20 +2,20 @@ define([
   "jquery",
   "backbone",
   "underscore",
+  // global jquery functions
+  "global",
   // nested views
   "views/home/sidebars/sidebar-right/content/tasks-view",
   // path to left sidebar html template
   "text!templates/home/sidebars/sidebar-right/sidebar-right.html"
-], function($, Backbone, _, Tasks, RightSidebarTemplate) {
+], function($, Backbone, _, Global, Tasks, RightSidebarTemplate) {
   // nested in home view
   return Backbone.View.extend({
     // do not have predefined $el
     events: {
       "click .slide-submenu": "onSlideClick"
     },
-    initialize: function(options) {
-      // save callback
-      this.collapseCallback = options.onCollapse;
+    initialize: function() {
       // render on create
       this.render();
     },
@@ -26,15 +26,14 @@ define([
       // append nested views
       this.$("#tasks-panel").html(new Tasks().$el);
     },
-    onSlideClick: function() {
       // only sidebar-body of right sidebar handle this click
-      var self = this;
+    onSlideClick: function() {
       // hide right sidebar
       this.$(".sidebar-body").fadeOut("slide", function() {
         // show minimized icon
         $(".mini-submenu-right").fadeIn();
         // recalculate margins
-        self.collapseCallback();
+        Global.applyMargins();
       });
     }
   });

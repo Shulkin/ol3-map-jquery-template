@@ -5,7 +5,7 @@ define([
     isConstrained: function() {
       return $("div.middle").width() == $(window).width();
     },
-    applyInitialUIState: function() {
+    applyInitial: function() {
       // on initial application state
       if (this.isConstrained()) {
         // show sidebars
@@ -15,8 +15,6 @@ define([
         $(".mini-submenu-left").fadeIn();
         $(".mini-submenu-right").fadeIn();
       }
-      // update scrollbars
-      this.updatePerfectScrollbar();
     },
     applyMargins: function() {
       // ol-zoom near left sidebar
@@ -49,22 +47,23 @@ define([
       // set offset margin depending on navbar height
       $(".navbar-offset").css("margin-top", $(".navbar").height());
     },
-    updatePerfectScrollbar: function() {
-      // update perfect scrollbar in all panels
-      $(".panel-body").perfectScrollbar("update");
-      $("#navbar-body").perfectScrollbar("update");
-    },
-    createHandlers: function() {
+    onPanelCollapse: function() {
       // on collapse content in sidebar panel
       $(".panel-collapse").on("hidden.bs.collapse", this.applyMargins);
       // on expand content in sidebar panel
       $(".panel-collapse").on("shown.bs.collapse", this.applyMargins);
+    },
+    onWindowResize: function() {
       // calculate margins for openlayers3 controls on window resize
       var self = this;
       $(window).on("resize", function() {
+        console.log("global: resize window");
         self.applyMargins();
-        self.updatePerfectScrollbar();
+        //self.updatePerfectScrollbar();
       });
+    },
+    fireWindowResizeEvent: function() {
+      $(window).resize();
     }
   }
 });

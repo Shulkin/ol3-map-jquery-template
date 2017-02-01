@@ -14,6 +14,12 @@ define([
       this.render();
       // put perfect scrollbar on panel body
       this.$(".panel-body").perfectScrollbar();
+      // attach local window resize handler
+      var self = this;
+      $(window).on("resize", function() {
+        console.log("properties-view: resize window");
+        self.$(".panel-body").perfectScrollbar("update");
+      });
     },
     render: function() {
       // compile template

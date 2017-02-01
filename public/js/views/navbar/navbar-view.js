@@ -11,8 +11,9 @@ define([
   return Backbone.View.extend({
     el: $("#navbar"), // div container
     events: {
-      "shown.bs.collapse #navbar-body": "onCollapseNavbar",
-      "hidden.bs.collapse #navbar-body": "onExpandNavbar"
+      // one handler for both expand and collapse havbar
+      "shown.bs.collapse #navbar-body": "onToggleNavbar",
+      "hidden.bs.collapse #navbar-body": "onToggleNavbar",
     },
     initialize: function() {
       // render on create
@@ -22,19 +23,20 @@ define([
         // disable horizontal scroll
         suppressScrollX: true
       });
+      // attach local window resize handler
+      var self = this;
+      $(window).on("resize", function() {
+        console.log("navbar-view: resize window");
+        self.$("#navbar-body").perfectScrollbar("update");
+      });
     },
     render: function() {
       // compile template
       var compiledTemplate = _.template(NavbarTemplate);
       this.$el.html(compiledTemplate);
     },
-    onCollapseNavbar: function() {
-      console.log("navbar collapsed");
-      this.$("#navbar-body").perfectScrollbar("update");
-      Global.applyMargins();
-    },
-    onExpandNavbar: function() {
-      console.log("navbar expanded");
+    onToggleNavbar: function() {
+      // update scrollbar and sidebars margins
       this.$("#navbar-body").perfectScrollbar("update");
       Global.applyMargins();
     }
