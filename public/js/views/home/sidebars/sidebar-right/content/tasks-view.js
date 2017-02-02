@@ -18,6 +18,7 @@ define([
     initialize: function() {
       // render on create
       this.render();
+      /*
       // put perfect scrollbar on panel body
       this.$(".panel-body").perfectScrollbar();
       // attach local window resize handler
@@ -25,6 +26,7 @@ define([
       $(window).on("resize", function() {
         self.$(".panel-body").perfectScrollbar("update");
       });
+      */
     },
     render: function() {
       // compile template

@@ -2,12 +2,13 @@ define([
   "jquery",
   "backbone",
   "underscore",
+  "jqueryUi",
   "perfectScrollbar",
   // global jquery functions
   "global",
   // path to html template
   "text!templates/home/sidebars/sidebar-left/content/properties.html"
-], function($, Backbone, _, Ps, Global, PropertiesTemplate) {
+], function($, Backbone, _, Ui, Ps, Global, PropertiesTemplate) {
   // nested in left sidebar view
   return Backbone.View.extend({
     // do not have predefined $el
@@ -24,6 +25,16 @@ define([
       var self = this;
       $(window).on("resize", function() {
         self.$(".panel-body").perfectScrollbar("update");
+      });
+      // make panel resizable with jQuery UI
+      this.$(".panel-body").resizable({
+        handles: {
+          "s": this.$(".panel-resize-handle")
+        },
+        resize: function(evt, el) {
+          // update scrollbar when stop resizing
+          self.$(".panel-body").perfectScrollbar("update");
+        }
       });
     },
     render: function() {

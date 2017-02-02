@@ -7,6 +7,9 @@ require.config({
     }, // et cetera
     bootstrap: {
       deps: ["jquery"]
+    },
+    jqueryUi: {
+      deps: ["jquery"]
     }
   },
   paths: {
@@ -14,6 +17,7 @@ require.config({
     backbone: "../bower_components/backbone/backbone-min",
     bootstrap: "../bower_components/bootstrap/dist/js/bootstrap.min",
     jquery: "../bower_components/jquery/dist/jquery.min",
+    jqueryUi: "../bower_components/jquery-ui/jquery-ui.min",
     openlayers3: "../bower_components/openlayers3/ol",
     underscore: "../bower_components/underscore/underscore-min",
     // perfect-scrollbar by noraesae (Hyunje Jun), as jQuery plugin
