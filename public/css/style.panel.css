@@ -1,4 +1,5 @@
 #layers .panel-body {
+  position: relative;
   height: 120px;
   min-height: 120px;
   max-height: 360px;
