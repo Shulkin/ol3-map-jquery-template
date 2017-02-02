@@ -28,11 +28,9 @@ define([
       });
       // make panel resizable with jQuery UI
       this.$(".panel-body").resizable({
-        handles: {
-          "s": this.$(".panel-resize-handle")
-        },
+        handles: {"s": this.$(".ui-resizable-s")},
         resize: function(evt, el) {
-          // update scrollbar when stop resizing
+          // update scrollbar when resizing
           self.$(".panel-body").perfectScrollbar("update");
         }
       });
