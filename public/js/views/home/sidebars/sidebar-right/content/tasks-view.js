@@ -20,18 +20,18 @@ define([
       // render on create
       this.render();
       // put perfect scrollbar on panel body
-      this.$(".panel-body").perfectScrollbar();
+      this.$(".panel-resizable").perfectScrollbar();
       // attach local window resize handler
       var self = this;
       $(window).on("resize", function() {
-        self.$(".panel-body").perfectScrollbar("update");
+        self.$(".panel-resizable").perfectScrollbar("update");
       });
       // make panel resizable with jQuery UI
-      this.$(".panel-body").resizable({
+      this.$(".panel-resizable").resizable({
         handles: {"s": this.$(".ui-resizable-s")},
         resize: function(evt, el) {
           // update scrollbar when resizing
-          self.$(".panel-body").perfectScrollbar("update");
+          self.$(".panel-resizable").perfectScrollbar("update");
         }
       });
     },
@@ -42,7 +42,7 @@ define([
     },
     onTogglePanel: function() {
       // update scrollbar and sidebars margins
-      this.$(".panel-body").perfectScrollbar("update");
+      this.$(".panel-resizable").perfectScrollbar("update");
       Global.applyMargins();
     }
   });

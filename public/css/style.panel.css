@@ -12,7 +12,7 @@
   max-height: 480px;
   overflow: auto;
 }
-#taskpane .panel-body {
+#taskpane .panel-resizable {
   position: relative;
   height: 180px;
   min-height: 180px;
@@ -37,5 +37,5 @@
 }
 .ui-resizable-s {
   /* Exactly on panels bottom */
-  top: 0px;
+  bottom: 0;
 }
