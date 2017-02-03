@@ -5,10 +5,10 @@ define([
   // global jquery functions
   "global",
   // nested views
-  "views/home/sidebars/sidebar-right/content/tasks-view",
+  "views/home/sidebars/sidebar-right/content/right-content-1-view",
   // path to left sidebar html template
   "text!templates/home/sidebars/sidebar-right/sidebar-right.html"
-], function($, Backbone, _, Global, Tasks, RightSidebarTemplate) {
+], function($, Backbone, _, Global, RightContent1, RightSidebarTemplate) {
   // nested in home view
   return Backbone.View.extend({
     // do not have predefined $el
@@ -24,7 +24,7 @@ define([
       var compiledTemplate = _.template(RightSidebarTemplate);
       this.$el.html(compiledTemplate);
       // append nested views
-      this.$("#tasks-panel").html(new Tasks().$el);
+      this.$("#right-content-1-panel").html(new RightContent1().$el);
     },
       // only sidebar-body of right sidebar handle this click
     onSlideClick: function() {

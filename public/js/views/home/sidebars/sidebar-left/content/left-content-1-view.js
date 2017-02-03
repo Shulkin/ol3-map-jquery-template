@@ -7,9 +7,9 @@ define([
   // global jquery functions
   "global",
   // path to html template
-  "text!templates/home/sidebars/sidebar-right/content/tasks.html"
-], function($, Backbone, _, Ui, Ps, Global, TasksTemplate) {
-  // nested in right sidebar view
+  "text!templates/home/sidebars/sidebar-left/content/left-content-1.html"
+], function($, Backbone, _, Ui, Ps, Global, LeftContent1Template) {
+  // nested in left sidebar view
   return Backbone.View.extend({
     // do not have predefined $el
     events: {
@@ -40,7 +40,7 @@ define([
     },
     render: function() {
       // compile template
-      var compiledTemplate = _.template(TasksTemplate);
+      var compiledTemplate = _.template(LeftContent1Template);
       this.$el.html(compiledTemplate);
     },
     onTogglePanel: function() {
