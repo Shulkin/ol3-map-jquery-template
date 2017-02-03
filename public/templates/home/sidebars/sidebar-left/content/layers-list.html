@@ -17,15 +17,11 @@
     <div class="panel-resizable">
       <div class="panel-body list-group">
         <!-- Print map layers list here -->
-        <a href="#" class="list-group-item">
-          <i class="fa fa-globe"></i> Open Street Map
-        </a>
-        <a href="#" class="list-group-item">
-          <i class="fa fa-globe"></i> Bing
-        </a>
-        <a href="#" class="list-group-item">
-          <i class="fa fa-globe"></i> Google Maps
-        </a>
+        <% _.each(layers, function(layer) { %>
+          <a href="#" class="list-group-item">
+            <i class="fa fa-globe"></i> <%= layer.name %>
+          </a>
+        <% }); %>
       </div>
     </div>
     <!-- Resize handle -->

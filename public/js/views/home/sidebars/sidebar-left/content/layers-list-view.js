@@ -39,9 +39,18 @@ define([
       });
     },
     render: function() {
+      // define layers list [TEST]
+      var data = {
+        layers: [
+          {name: "OSM"},
+          {name: "Bing"},
+          {name: "Google Maps"}
+        ]
+      };
       // compile template
       var compiledTemplate = _.template(LayersListTemplate);
-      this.$el.html(compiledTemplate);
+      // pass data to template [TEST]
+      this.$el.html(compiledTemplate(data));
     },
     onTogglePanel: function() {
       // update scrollbar and sidebars margins
