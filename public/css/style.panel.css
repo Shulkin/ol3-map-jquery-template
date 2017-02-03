@@ -5,7 +5,7 @@
   max-height: 360px;
   overflow: auto;
 }
-#properties .panel-body {
+#properties .panel-resizable {
   position: relative;
   height: 180px;
   min-height: 180px;

@@ -19,11 +19,12 @@ define([
     initialize: function() {
       // render on create
       this.render();
-      // put perfect scrollbar on panel body
+      // put perfect scrollbar on resizable panel body
       this.$(".panel-resizable").perfectScrollbar();
       // attach local window resize handler
       var self = this;
       $(window).on("resize", function() {
+        // scrollbar should be applied to resizable area
         self.$(".panel-resizable").perfectScrollbar("update");
       });
       // make panel resizable with jQuery UI
