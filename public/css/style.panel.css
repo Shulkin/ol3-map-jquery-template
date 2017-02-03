@@ -1,23 +1,18 @@
-#layers .panel-resizable {
+.panel-resizable {
   position: relative;
+  overflow: auto;
+}
+/* Panels default size */
+#layers .panel-resizable {
   height: 180px;
   min-height: 180px;
   max-height: 360px;
-  overflow: auto;
 }
-#properties .panel-resizable {
-  position: relative;
-  height: 180px;
-  min-height: 180px;
-  max-height: 480px;
-  overflow: auto;
-}
+#properties .panel-resizable,
 #taskpane .panel-resizable {
-  position: relative;
   height: 180px;
   min-height: 180px;
   max-height: 480px;
-  overflow: auto;
 }
 .ui-resizable-handle {
   position: relative;

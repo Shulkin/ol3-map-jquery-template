@@ -1,15 +1,20 @@
 /* Minimized sidebar icon */
 .mini-submenu {
   display: none;
-  background-color: rgba(255, 255, 255, 0.46);
-  border: 1px solid rgba(0, 0, 0, 0.9);
-  border-radius: 4px;
+  background: rgba(245, 245, 245, 0.8);
+  border: 1px solid rgba(130, 130, 130, 0.7);
+  border-radius: 3px;
   padding: 9px;
   width: 42px;
   text-align: center;
 }
+/* On hover */
 .mini-submenu:hover {
   cursor: pointer;
+}
+.mini-submenu:hover i {
+  /* Highlight icon in mini-submenu */
+  opacity: 0.55;
 }
 /* Icons positions for left and right sidebars */
 .mini-submenu-left, .mini-submenu-right {
