@@ -1,7 +1,7 @@
 #layers .panel-resizable {
   position: relative;
-  height: 120px;
-  min-height: 120px;
+  height: 180px;
+  min-height: 180px;
   max-height: 360px;
   overflow: auto;
 }

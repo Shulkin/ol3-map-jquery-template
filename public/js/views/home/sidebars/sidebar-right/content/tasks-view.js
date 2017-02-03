@@ -20,7 +20,9 @@ define([
       // render on create
       this.render();
       // put perfect scrollbar on resizable panel body
-      this.$(".panel-resizable").perfectScrollbar();
+      this.$(".panel-resizable").perfectScrollbar({
+        scrollYMarginOffset: 28
+      });
       // attach local window resize handler
       var self = this;
       $(window).on("resize", function() {
