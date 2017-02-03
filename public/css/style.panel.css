@@ -3,13 +3,13 @@
   overflow: auto;
 }
 /* Panels default size */
-#layers .panel-resizable {
+#layers-list .panel-resizable {
   height: 180px;
   min-height: 180px;
   max-height: 360px;
 }
-#properties .panel-resizable,
-#taskpane .panel-resizable {
+#left-content-1 .panel-resizable,
+#right-content-1 .panel-resizable {
   height: 180px;
   min-height: 180px;
   max-height: 480px;
