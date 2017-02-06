@@ -3,6 +3,8 @@ define([
   "views/home/home-view" // map, panels, etc.
 ], function(Navbar, Home) {
   var initialize = function() {
+    // initialize global collection
+    window.app = (window.app || {});
     // create navbar
     var navbar = new Navbar();
     // create content container
