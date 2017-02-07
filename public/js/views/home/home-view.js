@@ -18,10 +18,12 @@ define([
       "click .mini-submenu-right": "onMiniSubmenuRightClick",
     },
     initialize: function() {
+      // init openlayers3 map
+      var map = new Map();
       // render on create
       this.render();
-      // create openlayers3 map
-      var map = new Map();
+      // actually create map
+      map.create();
       // show sidebars by default
       Global.applyInitial();
       // attach window resize event handler

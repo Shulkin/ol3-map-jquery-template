@@ -17,6 +17,8 @@ define([
       "hidden.bs.collapse .panel-collapse": "onTogglePanel"
     },
     initialize: function() {
+      // get global layers collection before render
+      this.collection = window.app.collection.Layers;
       // render on create
       this.render();
       // put perfect scrollbar on resizable panel body
@@ -39,18 +41,9 @@ define([
       });
     },
     render: function() {
-      // define layers list [TEST]
-      var data = {
-        layers: [
-          {name: "OSM"},
-          {name: "Bing"},
-          {name: "Google Maps"}
-        ]
-      };
       // compile template
       var compiledTemplate = _.template(LayersListTemplate);
-      // pass data to template [TEST]
-      this.$el.html(compiledTemplate(data));
+      this.$el.html(compiledTemplate({layers: this.collection.toJSON()}));
     },
     onTogglePanel: function() {
       // update scrollbar and sidebars margins
