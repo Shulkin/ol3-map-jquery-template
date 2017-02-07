@@ -1,9 +1,52 @@
 define([
   "backbone",
+  "openlayers3",
+  // path to utilities
+  "utils/uid",
   // layer model
   "models/layer-model"
-], function(Backbone, Layer) {
+], function(Backbone, Ol, Uid, Layer) {
   return Backbone.Collection.extend({
-    initialize: function() {}
+    initialize: function() {
+      // create default
+      this.add({
+        uid: Uid.generate(),
+        name: "OpenStreetMap",
+        source: "OSM"
+      });
+      this.add({
+        uid: Uid.generate(),
+        name: "Bing",
+        source: "Bing"
+      });
+    },
+    toLayers: function() {
+      // convert collection to actual openlayers3 layers
+      var result = [];
+      this.each(function(item) {
+        var source;
+        // determine new layer source
+        switch (item.get("source")) {
+          case "OSM":
+            source = new Ol.source.OSM();
+            break;
+          case "Bing":
+            source = new Ol.source.BingMaps({
+              key: "Av3qOHrNHqfAxiIj8un9mwLbZoejQ55vnDApDU2qRzhn0sYeHtChkB3KWnN14WDE",
+              imagerySet: "Aerial"
+            });
+            break;
+          default:
+            // OpenStreetMap by default
+            source = new Ol.source.OSM();
+        }
+        result.push(new Ol.layer.Tile({
+          uid: item.get("uid"),
+          name: item.get("name"),
+          source: source
+        }));
+      });
+      return result;
+    }
   });
 });
