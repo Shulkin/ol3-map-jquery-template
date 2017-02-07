@@ -5,6 +5,7 @@ define([
   var initialize = function() {
     // initialize global collection
     window.app = (window.app || {});
+    window.app.collections = (window.app.collections || {});
     // create navbar
     var navbar = new Navbar();
     // create content container
