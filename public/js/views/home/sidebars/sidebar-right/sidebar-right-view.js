@@ -2,8 +2,8 @@ define([
   "jquery",
   "backbone",
   "underscore",
-  // global jquery functions
-  "global",
+  // global utilities
+  "utils/global",
   // nested views
   "views/home/sidebars/sidebar-right/content/right-content-1-view",
   // path to left sidebar html template

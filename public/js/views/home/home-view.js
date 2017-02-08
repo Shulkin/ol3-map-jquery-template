@@ -2,8 +2,8 @@ define([
   "jquery",
   "backbone",
   "underscore",
-  // global jquery functions
-  "global",
+  // global utilities
+  "utils/global",
   // nested views
   "views/home/map/map-view", // openlayers3 map
   "views/home/sidebars/sidebar-left/sidebar-left-view", // left sidebar
@@ -18,12 +18,13 @@ define([
       "click .mini-submenu-right": "onMiniSubmenuRightClick",
     },
     initialize: function() {
-      // init openlayers3 map
-      var map = new Map();
       // render on create
       this.render();
-      // actually create map
-      map.create();
+      // create openlayers3 map
+      var map = new Map({
+        // with default layers list
+        collection: window.app.collection.Layers
+      });
       // show sidebars by default
       Global.applyInitial();
       // attach window resize event handler

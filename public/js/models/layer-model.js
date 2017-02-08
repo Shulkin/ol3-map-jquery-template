@@ -1,6 +1,5 @@
 define([
   "backbone",
-  "openlayers3"
-], function(Backbone, Ol) {
+], function(Backbone) {
   return Backbone.Model.extend({});
 });

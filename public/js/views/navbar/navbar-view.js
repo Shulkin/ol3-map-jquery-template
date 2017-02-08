@@ -3,8 +3,8 @@ define([
   "backbone",
   "underscore",
   "perfectScrollbar",
-  // global jquery functions
-  "global",
+  // global utilities
+  "utils/global",
   // path to navbar html template
   "text!templates/navbar/navbar.html"
 ], function($, Backbone, _, Ps, Global, NavbarTemplate) {

@@ -4,8 +4,8 @@ define([
   "underscore",
   "jqueryUi",
   "perfectScrollbar",
-  // global jquery functions
-  "global",
+  // global utilities
+  "utils/global",
   // path to html template
   "text!templates/home/sidebars/sidebar-left/content/left-content-1.html"
 ], function($, Backbone, _, Ui, Ps, Global, LeftContent1Template) {

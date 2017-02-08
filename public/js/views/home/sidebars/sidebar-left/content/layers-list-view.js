@@ -4,8 +4,8 @@ define([
   "underscore",
   "jqueryUi",
   "perfectScrollbar",
-  // global jquery functions
-  "global",
+  // global utilities
+  "utils/global",
   // path to html template
   "text!templates/home/sidebars/sidebar-left/content/layers-list.html"
 ], function($, Backbone, _, Ui, Ps, Global, LayersListTemplate) {
@@ -17,8 +17,6 @@ define([
       "hidden.bs.collapse .panel-collapse": "onTogglePanel"
     },
     initialize: function() {
-      // get global layers collection before render
-      this.collection = window.app.collection.Layers;
       // render on create
       this.render();
       // put perfect scrollbar on resizable panel body

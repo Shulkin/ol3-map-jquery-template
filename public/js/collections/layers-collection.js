@@ -1,7 +1,7 @@
 define([
   "backbone",
   "openlayers3",
-  // path to utilities
+  // uid generator
   "utils/uid",
   // layer model
   "models/layer-model"

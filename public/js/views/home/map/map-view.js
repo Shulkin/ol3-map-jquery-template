@@ -2,19 +2,10 @@ define([
   "jquery",
   "backbone",
   "openlayers3",
-  // collection of layers
-  "collections/layers-collection"
-], function($, Backbone, Ol, Layers) {
+], function($, Backbone, Ol) {
   // nested in home view
   return Backbone.View.extend({
     initialize: function() {
-      // create default layers list
-      var list = new Layers();
-      this.collection = list; // save it
-      // make it global
-      window.app.collection.Layers = list;
-    },
-    create: function() {
       // create openlayers3 map
       var map = new Ol.Map({
         target: "map",

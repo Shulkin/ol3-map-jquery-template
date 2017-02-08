@@ -1,7 +1,7 @@
 define([
 ], function() {
   return {
-    // generate some unique id
+    // generate unique id
     generate: function() {
       // desired length of id
     	var len = 32;
