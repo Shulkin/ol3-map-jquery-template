@@ -16,6 +16,11 @@ define([
           zoom: 2
         })
       });
+      // bind change handlers
+      this.collection.on("change", this.onChange);
+    },
+    onChange: function() {
+      console.log("Some layer in collection changed!");
     }
   });
 });

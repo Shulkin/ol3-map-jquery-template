@@ -12,11 +12,13 @@ define([
       this.add({
         uid: Uid.generate(),
         name: "OpenStreetMap",
+        visible: false,
         source: "OSM"
       });
       this.add({
         uid: Uid.generate(),
         name: "Bing",
+        visible: true,
         source: "Bing"
       });
     },
@@ -43,6 +45,7 @@ define([
         result.push(new Ol.layer.Tile({
           uid: item.get("uid"),
           name: item.get("name"),
+          visible: item.get("visible"),
           source: source
         }));
       });
