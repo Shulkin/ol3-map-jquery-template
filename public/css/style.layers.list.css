@@ -5,15 +5,28 @@
 #layers-list .btn.active span.glyphicon {
   opacity: 1;
 }
-/* Make checkbox align right */
-/*
-#layers-list .btn-group {
+/* Center verticaly layer icon and controls */
+#layers-list .left, #layers-list .right {
   position: absolute;
   top: 50%;
-  right: 5px;
-  margin-top: -15px;
+  transform: translateY(-50%);
 }
-*/
+/* Align inline all elements */
+#layers-list .left {
+  /* From left border */
+  left: 7px;
+}
+#layers-list .center {
+  /* Set corresponding margins */
+  margin-left: 15px; /* 7px + approximate glyphicon size */
+  margin-right: 32px; /* 7px + controls size */
+  /* Line will wrap */
+  overflow-wrap: break-word;
+}
+#layers-list .right {
+  /* From right border */
+  right: 7px;
+}
 /* Set small font for checkbox buton */
 #layers-list .btn {
   font-size: 12px;

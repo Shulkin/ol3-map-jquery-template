@@ -19,26 +19,17 @@
         <!-- Print map layers list here -->
         <% _.each(layers, function(layer) { %>
           <div class="list-group-item">
-            <div class="c1">
-              <i class="fa fa-globe"></i>
+            <!-- Align info inline with margins -->
+            <div class="left"><i class="fa fa-globe"></i></div>
+            <div class="center"><%= layer.name %></div>
+            <div class="right">
+              <div class="btn-group text-right" data-toggle="buttons">
+                <label class="btn btn-default btn-circle">
+                  <input type="checkbox" autocomplete="off">
+                  <span class="glyphicon glyphicon-ok"></span>
+                </label>
+              </div>
             </div>
-            <div class="c2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit
-            </div>
-            <div class="c3">
-              <i class="fa fa-globe"></i>
-            </div>
-            <!--
-            <span class="text-nowrap">
-              <i class="fa fa-globe"></i> <%= layer.name %>
-            </span>
-            <div class="btn-group text-right" data-toggle="buttons">
-              <label class="btn btn-default btn-circle">
-                <input type="checkbox" autocomplete="off">
-                <span class="glyphicon glyphicon-ok"></span>
-              </label>
-            </div>
-            -->
           </div>
         <% }); %>
       </div>
