@@ -1,0 +1,29 @@
+/* Toggle glyphicon icon in checkbox */
+#layers-list .btn span.glyphicon {
+  opacity: 0;
+}
+#layers-list .btn.active span.glyphicon {
+  opacity: 1;
+}
+/* Make checkbox align right */
+/*
+#layers-list .btn-group {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  margin-top: -15px;
+}
+*/
+/* Set small font for checkbox buton */
+#layers-list .btn {
+  font-size: 12px;
+}
+/* Make button circle */
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
