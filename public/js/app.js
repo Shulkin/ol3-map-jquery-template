@@ -1,10 +1,10 @@
 define([
   // collections
-  "collections/layers-collection" // layers list
+  "collections/layers-collection", // layers list
   // views
   "views/navbar/navbar-view", // menu navbar
   "views/home/home-view" // map, panels, etc.
-], function(Navbar, Home) {
+], function(Layers, Navbar, Home) {
   var initialize = function() {
     // initialize global storage
     window.app = (window.app || {});
