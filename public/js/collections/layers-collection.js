@@ -39,6 +39,7 @@ define([
             source = new Ol.source.OSM();
         }
         result.push(new Ol.layer.Tile({
+          cid: item.cid,
           name: item.get("name"),
           visible: item.get("visible"),
           source: source

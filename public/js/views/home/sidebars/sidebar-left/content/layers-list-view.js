@@ -15,7 +15,7 @@ define([
     events: {
       "shown.bs.collapse .panel-collapse": "onTogglePanel",
       "hidden.bs.collapse .panel-collapse": "onTogglePanel",
-      "click .layer-visible.checkbox input:checkbox": "onToggleLayerVisible"
+      "click .layer-visible.checkbox input:checkbox": "onClickLayerVisible"
     },
     initialize: function() {
       // render on create
@@ -49,13 +49,13 @@ define([
       this.$(".panel-resizable").perfectScrollbar("update");
       Global.applyMargins();
     },
-    onToggleLayerVisible: function(e) {
+    onClickLayerVisible: function(e) {
       var target = $(e.target);
-      // iterate layers collection
-      var layer = this.collection.where({cid: target.attr("value")});
-      if (layer.length > 0) { // if found any
+      // get layer model by cid (undefined otherwise)
+      var layer = this.collection.get({cid: target.attr("value")});
+      if (layer !== undefined) { // if found any
         // set visible attribute
-        layer[0].set({visible: target.is(":checked")});
+        layer.set({visible: target.is(":checked")});
       }
     }
   });
