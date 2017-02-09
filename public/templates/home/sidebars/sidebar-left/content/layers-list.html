@@ -23,11 +23,12 @@
             <div class="item left"><i class="fa fa-globe"></i></div>
             <div class="item center"><%= layer.name %></div>
             <div class="item right">
-              <div class="checkbox checkbox-circle">
+              <div class="layer-visible checkbox checkbox-circle">
                 <!-- Checked if layer is visible -->
-                <input id="<%= layer.uid %>" type="checkbox"
+                <input id="visible_<%= layer.uid %>"
+                  type="checkbox" value="<%= layer.uid %>"
                   <% print(layer.visible ? 'checked' : '') %>>
-                <label for="<%= layer.uid %>"></label>
+                <label for="visible_<%= layer.uid %>"></label>
               </div>
             </div>
           </div>

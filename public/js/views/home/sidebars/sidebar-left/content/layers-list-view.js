@@ -14,7 +14,8 @@ define([
     // do not have predefined $el
     events: {
       "shown.bs.collapse .panel-collapse": "onTogglePanel",
-      "hidden.bs.collapse .panel-collapse": "onTogglePanel"
+      "hidden.bs.collapse .panel-collapse": "onTogglePanel",
+      "click .layer-visible.checkbox input:checkbox": "onToggleLayerVisible"
     },
     initialize: function() {
       // render on create
@@ -47,6 +48,15 @@ define([
       // update scrollbar and sidebars margins
       this.$(".panel-resizable").perfectScrollbar("update");
       Global.applyMargins();
+    },
+    onToggleLayerVisible: function(e) {
+      var target = $(e.target);
+      // iterate layers collection
+      var layer = this.collection.where({uid: target.attr("value")});
+      if (layer.length > 0) { // if found any
+        // set visible attribute
+        layer[0].set({visible: target.is(":checked")});
+      }
     }
   });
 });
