@@ -52,7 +52,7 @@ define([
     onToggleLayerVisible: function(e) {
       var target = $(e.target);
       // iterate layers collection
-      var layer = this.collection.where({uid: target.attr("value")});
+      var layer = this.collection.where({cid: target.attr("value")});
       if (layer.length > 0) { // if found any
         // set visible attribute
         layer[0].set({visible: target.is(":checked")});

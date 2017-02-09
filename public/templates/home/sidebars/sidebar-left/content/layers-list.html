@@ -25,10 +25,10 @@
             <div class="item right">
               <div class="layer-visible checkbox checkbox-circle">
                 <!-- Checked if layer is visible -->
-                <input id="visible_<%= layer.uid %>"
-                  type="checkbox" value="<%= layer.uid %>"
+                <input id="<%= layer.cid %>"
+                  type="checkbox" value="<%= layer.cid %>"
                   <% print(layer.visible ? 'checked' : '') %>>
-                <label for="visible_<%= layer.uid %>"></label>
+                <label for="<%= layer.cid %>"></label>
               </div>
             </div>
           </div>

@@ -1,26 +1,22 @@
 define([
   "backbone",
   "openlayers3",
-  // uid generator
-  "utils/uid",
   // layer model
   "models/layer-model"
-], function(Backbone, Ol, Uid, Layer) {
+], function(Backbone, Ol, Layer) {
   return Backbone.Collection.extend({
     initialize: function() {
       // create default
-      this.add({
-        uid: Uid.generate(),
+      this.add(new Layer({
         name: "OpenStreetMap",
         visible: false,
         source: "OSM"
-      });
-      this.add({
-        uid: Uid.generate(),
+      }));
+      this.add(new Layer({
         name: "Bing",
         visible: true,
         source: "Bing"
-      });
+      }));
     },
     toLayers: function() {
       // convert collection to actual openlayers3 layers
@@ -43,7 +39,6 @@ define([
             source = new Ol.source.OSM();
         }
         result.push(new Ol.layer.Tile({
-          uid: item.get("uid"),
           name: item.get("name"),
           visible: item.get("visible"),
           source: source
