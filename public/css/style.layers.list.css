@@ -1,42 +1,23 @@
-/* Toggle glyphicon icon in checkbox */
-#layers-list .btn span.glyphicon {
-  opacity: 0;
-}
-#layers-list .btn.active span.glyphicon {
-  opacity: 1;
-}
-/* Center verticaly layer icon and controls */
-#layers-list .left, #layers-list .right {
+/* Verticaly align layer icon and controls */
+#layers-list .item.left, #layers-list .item.right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-/* Align inline all elements */
-#layers-list .left {
-  /* From left border */
-  left: 7px;
+/* Elements in layer item should be inline */
+/* Glyphicon */
+#layers-list .item.left {
+  left: 7px; /* From left border */
 }
-#layers-list .center {
+/* Layer name */
+#layers-list .item.center {
   /* Set corresponding margins */
-  margin-left: 15px; /* 7px + approximate glyphicon size */
-  margin-right: 32px; /* 7px + controls size */
-  /* Line will wrap */
+  margin-left: 15px; /* Layer glyphicon */
+  margin-right: 32px; /* Control elements */
+  /* Name string will wrap */
   overflow-wrap: break-word;
 }
-#layers-list .right {
-  /* From right border */
-  right: 7px;
-}
-/* Set small font for checkbox buton */
-#layers-list .btn {
-  font-size: 12px;
-}
-/* Make button circle */
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  line-height: 1.428571429;
-  border-radius: 15px;
+/* Controls */
+#layers-list .item.right {
+  right: 7px; /* From right border */
 }

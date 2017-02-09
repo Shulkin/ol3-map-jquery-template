@@ -16,10 +16,10 @@ define([
           zoom: 2
         })
       });
-      // bind change handlers
-      this.collection.on("change", this.onChange);
+      // change event on layers collection
+      this.collection.on("change", this.onLayersChange);
     },
-    onChange: function() {
+    onLayersChange: function() {
       console.log("Some layer in collection changed!");
     }
   });

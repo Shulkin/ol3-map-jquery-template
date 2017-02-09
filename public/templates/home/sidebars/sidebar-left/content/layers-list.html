@@ -19,15 +19,15 @@
         <!-- Print map layers list here -->
         <% _.each(layers, function(layer) { %>
           <div class="list-group-item">
-            <!-- Align info inline with margins -->
-            <div class="left"><i class="fa fa-globe"></i></div>
-            <div class="center"><%= layer.name %></div>
-            <div class="right">
-              <div class="btn-group text-right" data-toggle="buttons">
-                <label class="btn btn-default btn-circle">
-                  <input type="checkbox" autocomplete="off" <% print(layer.visible ? 'checked="checked"' : '') %>>
-                  <span class="glyphicon glyphicon-ok"></span>
-                </label>
+            <!-- All items elements in one line -->
+            <div class="item left"><i class="fa fa-globe"></i></div>
+            <div class="item center"><%= layer.name %></div>
+            <div class="item right">
+              <div class="checkbox checkbox-circle">
+                <!-- Checked if layer is visible -->
+                <input id="<%= layer.uid %>" type="checkbox"
+                  <% print(layer.visible ? 'checked' : '') %>>
+                <label for="<%= layer.uid %>"></label>
               </div>
             </div>
           </div>
