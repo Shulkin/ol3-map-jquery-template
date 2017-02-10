@@ -15,7 +15,7 @@ define([
     events: {
       "shown.bs.collapse .panel-collapse": "onTogglePanel",
       "hidden.bs.collapse .panel-collapse": "onTogglePanel",
-      "click .layer-visible.checkbox input:checkbox": "onClickLayerVisible"
+      "click .layer-display input:checkbox": "onClickLayerDisplay"
     },
     initialize: function() {
       // render on create
@@ -49,7 +49,7 @@ define([
       this.$(".panel-resizable").perfectScrollbar("update");
       Global.applyMargins();
     },
-    onClickLayerVisible: function(e) {
+    onClickLayerDisplay: function(e) {
       var target = $(e.target);
       // get layer model by cid (undefined otherwise)
       var layer = this.collection.get({cid: target.attr("value")});
