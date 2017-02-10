@@ -23,11 +23,12 @@
             <div class="item left"><i class="fa fa-globe"></i></div>
             <div class="item center"><%= layer.name %></div>
             <div class="item right">
+              <!-- Outer circle of display checkbox -->
               <div class="layer-display checkbox-round">
                 <label>
                   <input type="checkbox" value="<%= layer.cid %>"
                     <% print(layer.visible ? 'checked' : '') %>>
-                  <!-- Inner circle of checkbox -->
+                  <!-- Inner circle -->
                   <div class="checkbox-inner"></div>
                 </label>
               </div>

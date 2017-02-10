@@ -19,9 +19,9 @@ define([
       // save map to global variable
       window.app.map = map;
       // bind event handlers
-      this.collection.on("change:visible", this.onChangeLayerVisible);
+      this.collection.on("change:visible", this.onChangeLayerDisplay);
     },
-    onChangeLayerVisible: function(model, value, options) {
+    onChangeLayerDisplay: function(model, value, options) {
       console.log("onChangeLayerVisible");
       console.log("model.cid: " + model.cid);
       // iterate map layers looking for cid
@@ -30,58 +30,23 @@ define([
         console.log("layer.cid = " + layer.get("cid"));
         if (layer.get("cid") === model.cid) {
           console.log("change visible to " + value);
-          /*
-          if (value) {
-            // show layer
-            var from = 0;
-            var to = 1;
-            console.log("from: " + from + ", to: " + to);
-            console.log("layer.visible: " + layer.getVisible());
-            console.log("layer.opacity: " + layer.getOpacity());
-            $({n: from}).animate({n: to}, {
-              duration: 500,
-              start: function() {
-                layer.setVisible(true);
-              },
-              step: function(now, fx) {
-                layer.setOpacity(now);
-              }
-            });
-          } else {
-            // hide layer
-            var from = layer.getOpacity();
-            var to = 0;
-            console.log("from: " + from + ", to: " + to);
-            console.log("layer.visible: " + layer.getVisible());
-            console.log("layer.opacity: " + layer.getOpacity());
-            $({n: from}).animate({n: to}, {
-              duration: 500,
-              step: function(now, fx) {
-                layer.setOpacity(now);
-              },
-              complete: function() {
-                layer.setVisible(false);
-              }
-            });
-          }
-          */
-          /*
+          // perform smooth layer display transition
           var from = value ? 0 : layer.getOpacity();
-          var to = value ? 100 : 0;
-          $({opacity: from}).animate({opacity: to}, {
-            duration: 1000,
-            start: function() {
-              console.log("start easing");
+          var to = value ? 1 : 0;
+          $({n: from}).animate({n: to}, {
+            duration: 500, // .5s
+            start: function() { // always true on start!
+              layer.setVisible(true);
             },
-            step: function(now, fx) {
+            step: function(now, fx) { // easing
               layer.setOpacity(now);
             },
-            complete: function() {
-              console.log("complete easing");
+            complete: function() { // hide only when necessary!
+              layer.setVisible(value);
             }
           });
-          */
           /*
+          // simple toggle display
           layer.setVisible(value);
           */
         }
