@@ -3,11 +3,12 @@ define([
   "backbone",
   "openlayers3",
 ], function($, Backbone, Ol) {
+  var map; // store map as local variable in module
   // nested in home view
   return Backbone.View.extend({
     initialize: function() {
       // create openlayers3 map
-      var map = new Ol.Map({
+      map = new Ol.Map({
         target: "map",
         layers: this.collection.toLayers(),
         view: new Ol.View({
@@ -16,14 +17,12 @@ define([
           zoom: 2
         })
       });
-      // save map to global variable
-      window.app.map = map;
-      // bind event handlers
+      // bind event handlers on layers collection
       this.collection.on("change:visible", this.onChangeLayerDisplay);
     },
     onChangeLayerDisplay: function(model, value, options) {
       // iterate map layers looking for cid
-      window.app.map.getLayers().forEach(function(layer) {
+      map.getLayers().forEach(function(layer) {
         if (layer.get("cid") === model.cid) {
           // perform smooth layer display transition
           var from = value ? 0 : layer.getOpacity();
