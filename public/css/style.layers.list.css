@@ -1,8 +1,20 @@
-/* Verticaly align layer icon and controls */
-#layers-list .item.left, #layers-list .item.right {
+#layers-list .list-group-item {
+  cursor: pointer;
+}
+#layers-list .list-group-item:hover {
+  background: #f2f2f2;
+}
+#layers-list .options {
+  margin-top: .5em;
+}
+/* Verticaly align left and right items */
+#layers-list .item.left {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: .7em;
+}
+#layers-list .item.right {
+  position: absolute;
+  top: .5em;
 }
 /* Elements in layer item should be inline */
 /* Glyphicon */
@@ -17,18 +29,7 @@
   /* Name string will wrap */
   overflow-wrap: break-word;
 }
-/* Controls */
+/* Display control */
 #layers-list .item.right {
   right: 7px; /* From right border */
-}
-/* Set larger size for checkbox label */
-#layers-list .checkbox label::before {
-  width: 25px;
-  height: 25px;
-  margin-left: -22px;
-}
-#layers-list .checkbox label::after {
-  width: 26px;
-  height: 26px;
-  font-size: 16px;
 }

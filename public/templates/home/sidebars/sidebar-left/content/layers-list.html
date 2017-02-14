@@ -21,7 +21,16 @@
           <div class="list-group-item">
             <!-- All items elements in one line -->
             <div class="item left"><i class="fa fa-globe"></i></div>
-            <div class="item center"><%= layer.name %></div>
+            <div class="item center">
+              <div class="collapser"><%= layer.name %></div>
+              <div class="options collapse out">
+                <div> <!-- Brief description -->
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </div>
+                <!-- Opacity slider -->
+                <div class="slider"></div>
+              </div>
+            </div>
             <div class="item right">
               <!-- Outer circle of display checkbox -->
               <div class="layer-display checkbox-round">

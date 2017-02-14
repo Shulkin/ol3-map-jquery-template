@@ -15,7 +15,8 @@ define([
     events: {
       "shown.bs.collapse .panel-collapse": "onTogglePanel",
       "hidden.bs.collapse .panel-collapse": "onTogglePanel",
-      "click .layer-display input:checkbox": "onClickLayerDisplay"
+      "click .layer-display input:checkbox": "onClickLayerDisplay",
+      "click .collapser": "onClickLayerOptions"
     },
     initialize: function() {
       // render on create
@@ -38,6 +39,8 @@ define([
           self.$(".panel-resizable").perfectScrollbar("update");
         }
       });
+      // create layer opacity sliders
+      this.$(".slider").slider();
     },
     render: function() {
       // compile template
@@ -57,6 +60,10 @@ define([
         // set visible attribute
         layer.set({visible: target.is(":checked")});
       }
+    },
+    onClickLayerOptions: function(e) {
+      // collapse element next to target
+      $(e.target).next().collapse("toggle");
     }
   });
 });
