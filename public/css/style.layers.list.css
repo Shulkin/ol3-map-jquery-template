@@ -4,8 +4,17 @@
 #layers-list .list-group-item:hover {
   background: #f2f2f2;
 }
-#layers-list .options {
-  margin-top: .5em;
+#layers-list .slider {
+  padding-bottom: 1em;
+}
+#layers-list .slider .icon {
+  float: left;
+}
+#layers-list .slider .ui-slider {
+  float: left;
+  margin-top: 2px;
+  margin-left: 10px;
+  width: calc(100% - 30px);
 }
 /* Verticaly align left and right items */
 #layers-list .item.left {
@@ -28,6 +37,8 @@
   margin-right: 32px; /* Control elements */
   /* Name string will wrap */
   overflow-wrap: break-word;
+  /* Set minimum width */
+  min-width: 120px;
 }
 /* Display control */
 #layers-list .item.right {

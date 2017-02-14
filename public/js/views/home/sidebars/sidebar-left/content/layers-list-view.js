@@ -40,7 +40,7 @@ define([
         }
       });
       // create layer opacity sliders
-      this.$(".slider").slider();
+      this.$(".ui-slider").slider();
     },
     render: function() {
       // compile template
