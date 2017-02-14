@@ -22,6 +22,9 @@ define([
         this.onChangeLayerDisplay, // show/hide layer
         this // pass this view to handler
       );
+      this.collection.on("change:opacity",
+        this.onChangeLayerOpacity, this
+      );
     },
     onChangeLayerDisplay: function(model, value, options) {
       // iterate map layers looking for cid
@@ -43,7 +46,14 @@ define([
             }
           });
         }
-      })
+      });
+    },
+    onChangeLayerOpacity: function(model, value, options) {
+      this.map.getLayers().forEach(function(layer) {
+        if (layer.get("cid") === model.cid) {
+          layer.setOpacity(model.get("opacity") / 100);
+        }
+      });
     }
   });
 });

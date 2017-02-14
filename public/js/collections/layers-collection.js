@@ -10,11 +10,13 @@ define([
       this.add(new Layer({
         name: "OpenStreetMap",
         visible: false,
+        opacity: 100,
         source: "OSM"
       }));
       this.add(new Layer({
         name: "Bing",
         visible: true,
+        opacity: 100,
         source: "Bing"
       }));
     },

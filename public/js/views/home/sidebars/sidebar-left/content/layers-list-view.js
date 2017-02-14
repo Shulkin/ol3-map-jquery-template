@@ -16,7 +16,8 @@ define([
       "shown.bs.collapse .panel-collapse": "onTogglePanel",
       "hidden.bs.collapse .panel-collapse": "onTogglePanel",
       "click .layer-display input:checkbox": "onClickLayerDisplay",
-      "click .collapser": "onClickLayerOptions"
+      "click .collapser": "onClickLayerOptions",
+      "slide .ui-slider": "onSlideOpacitySlider"
     },
     initialize: function() {
       // render on create
@@ -40,7 +41,10 @@ define([
         }
       });
       // create layer opacity sliders
-      this.$(".ui-slider").slider();
+      this.$(".ui-slider").slider({
+        min: 0, max: 100, step: 1,
+        value: 100 // default opacity
+      });
     },
     render: function() {
       // compile template
@@ -57,13 +61,21 @@ define([
       // get layer model by cid (undefined otherwise)
       var layer = this.collection.get({cid: target.attr("value")});
       if (layer !== undefined) { // if found any
-        // set visible attribute
+        // set visible attribute in model
         layer.set({visible: target.is(":checked")});
       }
     },
     onClickLayerOptions: function(e) {
       // collapse element next to target
       $(e.target).next().collapse("toggle");
+    },
+    onSlideOpacitySlider: function(e, ui) {
+      var target = $(e.target);
+      var layer = this.collection.get({cid: target.attr("value")});
+      if (layer !== undefined) {
+        // change opacity in model
+        layer.set({opacity: ui.value});
+      }
     }
   });
 });
