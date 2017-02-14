@@ -3,12 +3,12 @@ define([
   "backbone",
   "openlayers3",
 ], function($, Backbone, Ol) {
-  var map; // store map as local variable in module
   // nested in home view
   return Backbone.View.extend({
+    map: {}, // store map in view instance
     initialize: function() {
       // create openlayers3 map
-      map = new Ol.Map({
+      this.map = new Ol.Map({
         target: "map",
         layers: this.collection.toLayers(),
         view: new Ol.View({
@@ -17,12 +17,15 @@ define([
           zoom: 2
         })
       });
-      // bind event handlers on layers collection
-      this.collection.on("change:visible", this.onChangeLayerDisplay);
+      // listen for layers collection events
+      this.collection.on("change:visible",
+        this.onChangeLayerDisplay, // show/hide layer
+        this // pass this view to handler
+      );
     },
     onChangeLayerDisplay: function(model, value, options) {
       // iterate map layers looking for cid
-      map.getLayers().forEach(function(layer) {
+      this.map.getLayers().forEach(function(layer) {
         if (layer.get("cid") === model.cid) {
           // perform smooth layer display transition
           var from = value ? 0 : layer.getOpacity();
