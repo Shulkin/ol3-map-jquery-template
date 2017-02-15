@@ -9,9 +9,6 @@
 #layers-list .item.icon {
   position: absolute;
   left: 7px; /* From left border */
-  /* TEST */
-  background-color: red;
-  /* === */
 }
 /* Layer text fields in the center of the line */
 #layers-list .item.name, #layers-list .item.description {
@@ -22,23 +19,12 @@
   overflow-wrap: break-word;
   /* Wrap until minimum width */
   min-width: 120px;
-  /* TEST */
-  background-color: green;
-  /* === */
-}
-#layers-list .item.description {
-  /* TEST */
-  background-color: yellow;
-  /* === */
 }
 /* Display button in right */
 #layers-list .item.display {
   position: absolute;
   right: 7px; /* From right border */
   top: .5em; /* Fix top position */
-  /* TEST */
-  background-color: blue;
-  /* === */
 }
 /* Glyphicon before slider */
 #layers-list .item.icon.eye-slider {
@@ -48,7 +34,4 @@
 /* Opacity slider */
 #layers-list .item.slider {
   margin-left: 15px; /* Glyphicon */
-  /* TEST */
-  background-color: magenta;
-  /* === */
 }
