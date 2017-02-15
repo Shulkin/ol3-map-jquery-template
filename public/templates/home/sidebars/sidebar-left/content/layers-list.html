@@ -20,32 +20,36 @@
         <% _.each(layers, function(layer) { %>
           <div class="list-group-item">
             <!-- Icon, name, display button -->
-            <div>
-              <div class="item icon"><i class="fa fa-globe"></i></div>
-              <!-- Collapse target options div with corresponding layer id -->
-              <div class="item name" data-toggle="collapse"
-                data-target=".options#<%= layer.cid %>">
-                <%= layer.name %>
+            <div class="layer-info">
+              <!-- Order left-right-middle is important! -->
+              <div class="item left">
+                <i class="fa fa-globe"></i>
               </div>
-              <div class="item display">
-                <div class="layer-display checkbox-round">
-                  <label>
-                    <input type="checkbox" value="<%= layer.cid %>"
-                      <% print(layer.visible ? 'checked' : '') %>>
-                    <div class="checkbox-inner"></div>
-                  </label>
+              <div class="item right">
+                <div class="layer-display">
+                  <div class="checkbox-round">
+                    <label>
+                      <input type="checkbox" value="<%= layer.cid %>"
+                        <% print(layer.visible ? 'checked' : '') %>>
+                      <div class="checkbox-inner"></div>
+                    </label>
+                  </div>
                 </div>
+              </div>
+              <!-- Collapse target options div with corresponding layer id -->
+              <div class="item middle" data-toggle="collapse" data-target=".options#<%= layer.cid %>">
+                <%= layer.name %>
               </div>
             </div>
             <!-- Collapsible options panel -->
-            <div class="options top-margin-05-em collapse out" id="<%= layer.cid %>">
-              <!-- Brief description -->
-              <div class="item description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            <div class="options collapse out" id="<%= layer.cid %>">
+              <div class="margin-top-05-em">
+                <div class="item description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </div>
               </div>
-              <!-- Opacity slider -->
-              <div class="top-margin-05-em">
-                <div class="item icon eye-slider">
+              <div class="margin-top-05-em">
+                <div class="item left">
                   <i class="icon fa fa-eye"></i>
                 </div>
                 <div class="item slider">

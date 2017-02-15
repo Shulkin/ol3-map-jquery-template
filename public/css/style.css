@@ -1,7 +1,13 @@
 body {
   overflow: hidden;
 }
-/* General top margin for any element */
-.top-margin-05-em {
+/* Global outline for test purpose */
+/*
+* {
+  outline: 1px solid red;
+}
+*/
+/* Margins for any element */
+.margin-top-05-em {
   margin-top: .5em;
 }

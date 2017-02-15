@@ -5,33 +5,49 @@
 #layers-list .list-group-item:hover {
   background: #f2f2f2;
 }
-/* Glyphicon in left corner */
-#layers-list .item.icon {
-  position: absolute;
-  left: 7px; /* From left border */
+#layers-list .item.left {
+  float: left;
+  width: 30px;
 }
-/* Layer text fields in the center of the line */
-#layers-list .item.name, #layers-list .item.description {
-  /* Set corresponding margins */
-  margin-left: 15px; /* Glyphicon */
-  margin-right: 32px; /* Display button */
-  /* Name string will wrap */
-  overflow-wrap: break-word;
-  /* Wrap until minimum width */
-  min-width: 120px;
+#layers-list .item.right {
+  float: right;
+  width: 50px;
+  text-align: right;
 }
-/* Display button in right */
-#layers-list .item.display {
-  position: absolute;
-  right: 7px; /* From right border */
-  top: .5em; /* Fix top position */
+#layers-list .item.middle {
+  margin-left: 30px;
+  margin-right: 50px;
 }
-/* Glyphicon before slider */
-#layers-list .item.icon.eye-slider {
-  /* Place a little bit higher */
-  margin-top: -4px;
-}
-/* Opacity slider */
 #layers-list .item.slider {
-  margin-left: 15px; /* Glyphicon */
+  margin-left: 30px;
+  /**/
+  padding-top: 7px;
+}
+#layes-list .item.description {
+  margin: 0;
+}
+#layers-list .item.middle,
+#layers-list .item.description {
+  /* String will wrap */
+  overflow-wrap: break-word;
+  /* Until minimum width */
+  min-width: 80px;
+}
+#layers-list .layer-display {
+  position: relative;
+  margin-left: 10px;
+}
+#layers-list .options {
+  overflow: hidden;
+  width: 100%;
+}
+#layers-list .ui-slider {
+  width: calc(100% - 15px);
+}
+#layers-list .layer-info {
+  overflow: hidden;
+}
+#layers-list .item.left,
+#layers-list .item.middle {
+  padding-top: 3px;
 }
