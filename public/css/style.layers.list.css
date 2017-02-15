@@ -1,46 +1,54 @@
+/* Highlight layer item in list on hover */
 #layers-list .list-group-item {
   cursor: pointer;
 }
 #layers-list .list-group-item:hover {
   background: #f2f2f2;
 }
-#layers-list .slider {
-  padding-bottom: 1em;
-}
-#layers-list .slider .icon {
-  float: left;
-}
-#layers-list .slider .ui-slider {
-  float: left;
-  margin-top: 2px;
-  margin-left: 10px;
-  width: calc(100% - 30px);
-}
-/* Verticaly align left and right items */
-#layers-list .item.left {
+/* Glyphicon in left corner */
+#layers-list .item.icon {
   position: absolute;
-  top: .7em;
-}
-#layers-list .item.right {
-  position: absolute;
-  top: .5em;
-}
-/* Elements in layer item should be inline */
-/* Glyphicon */
-#layers-list .item.left {
   left: 7px; /* From left border */
+  /* TEST */
+  background-color: red;
+  /* === */
 }
-/* Layer name */
-#layers-list .item.center {
+/* Layer text fields in the center of the line */
+#layers-list .item.name, #layers-list .item.description {
   /* Set corresponding margins */
-  margin-left: 15px; /* Layer glyphicon */
-  margin-right: 32px; /* Control elements */
+  margin-left: 15px; /* Glyphicon */
+  margin-right: 32px; /* Display button */
   /* Name string will wrap */
   overflow-wrap: break-word;
-  /* Set minimum width */
+  /* Wrap until minimum width */
   min-width: 120px;
+  /* TEST */
+  background-color: green;
+  /* === */
 }
-/* Display control */
-#layers-list .item.right {
+#layers-list .item.description {
+  /* TEST */
+  background-color: yellow;
+  /* === */
+}
+/* Display button in right */
+#layers-list .item.display {
+  position: absolute;
   right: 7px; /* From right border */
+  top: .5em; /* Fix top position */
+  /* TEST */
+  background-color: blue;
+  /* === */
+}
+/* Glyphicon before slider */
+#layers-list .item.icon.eye-slider {
+  /* Place a little bit higher */
+  margin-top: -4px;
+}
+/* Opacity slider */
+#layers-list .item.slider {
+  margin-left: 15px; /* Glyphicon */
+  /* TEST */
+  background-color: magenta;
+  /* === */
 }

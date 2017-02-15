@@ -16,7 +16,6 @@ define([
       "shown.bs.collapse .panel-collapse": "onTogglePanel",
       "hidden.bs.collapse .panel-collapse": "onTogglePanel",
       "click .layer-display input:checkbox": "onClickLayerDisplay",
-      "click .collapser": "onClickLayerOptions",
       "slide .ui-slider": "onSlideOpacitySlider"
     },
     initialize: function() {
@@ -64,10 +63,6 @@ define([
         // set visible attribute in model
         layer.set({visible: target.is(":checked")});
       }
-    },
-    onClickLayerOptions: function(e) {
-      // collapse element next to target
-      $(e.target).next().collapse("toggle");
     },
     onSlideOpacitySlider: function(e, ui) {
       var target = $(e.target);

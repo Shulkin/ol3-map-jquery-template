@@ -19,30 +19,38 @@
         <!-- Print map layers list here -->
         <% _.each(layers, function(layer) { %>
           <div class="list-group-item">
-            <!-- All items elements in one line -->
-            <div class="item left"><i class="fa fa-globe"></i></div>
-            <div class="item center">
-              <div class="collapser"><%= layer.name %></div>
-              <div class="options top-offset-05-em collapse out">
-                <div> <!-- Brief description -->
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                </div>
-                <!-- Opacity slider -->
-                <div class="slider top-offset-05-em">
-                  <i class="icon fa fa-eye"></i>
-                  <div class="ui-slider" value="<%= layer.cid %>"></div>
+            <!-- Icon, name, display button -->
+            <div>
+              <div class="item icon"><i class="fa fa-globe"></i></div>
+              <!-- Collapse target options div with corresponding layer id -->
+              <div class="item name" data-toggle="collapse"
+                data-target=".options#<%= layer.cid %>">
+                <%= layer.name %>
+              </div>
+              <div class="item display">
+                <div class="layer-display checkbox-round">
+                  <label>
+                    <input type="checkbox" value="<%= layer.cid %>"
+                      <% print(layer.visible ? 'checked' : '') %>>
+                    <div class="checkbox-inner"></div>
+                  </label>
                 </div>
               </div>
             </div>
-            <div class="item right">
-              <!-- Outer circle of display checkbox -->
-              <div class="layer-display checkbox-round">
-                <label>
-                  <input type="checkbox" value="<%= layer.cid %>"
-                    <% print(layer.visible ? 'checked' : '') %>>
-                  <!-- Inner circle -->
-                  <div class="checkbox-inner"></div>
-                </label>
+            <!-- Collapsible options panel -->
+            <div class="options top-offset-05-em collapse out" id="<%= layer.cid %>">
+              <!-- Brief description -->
+              <div class="item description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              </div>
+              <!-- Opacity slider -->
+              <div class="top-offset-05-em">
+                <div class="item icon eye-slider">
+                  <i class="icon fa fa-eye"></i>
+                </div>
+                <div class="item slider">
+                  <div class="ui-slider" value="<%= layer.cid %>"></div>
+                </div>
               </div>
             </div>
           </div>
