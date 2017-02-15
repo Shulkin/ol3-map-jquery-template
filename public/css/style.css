@@ -2,11 +2,9 @@ body {
   overflow: hidden;
 }
 /* Global outline for test purpose */
-/*
 * {
   outline: 1px solid red;
 }
-*/
 /* Margins for any element */
 .margin-top-05-em {
   margin-top: .5em;
