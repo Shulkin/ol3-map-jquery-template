@@ -1,31 +1,34 @@
-/* Highlight layer item in list on hover */
+/* Cursor on hover */
 #layers-list .list-group-item {
   cursor: pointer;
 }
+/* Highlight layer item in list on hover */
 #layers-list .list-group-item:hover {
   background: #f2f2f2;
 }
+/* Glyphicon to left */
 #layers-list .item.left {
   float: left;
+  /* Fixed width */
   width: 30px;
 }
+/* Display control to right */
 #layers-list .item.right {
   float: right;
+  /* Fixed width */
   width: 50px;
-  text-align: right;
 }
+/* Layer name between left and right divs */
 #layers-list .item.middle {
+  /* Dynamic width */
   margin-left: 30px;
   margin-right: 50px;
 }
-#layers-list .item.slider {
-  margin-left: 30px;
-  /**/
-  padding-top: 7px;
-}
+/* Layer description takes whole line */
 #layes-list .item.description {
   margin: 0;
 }
+/* Text parameters */
 #layers-list .item.middle,
 #layers-list .item.description {
   /* String will wrap */
@@ -33,21 +36,32 @@
   /* Until minimum width */
   min-width: 80px;
 }
+/* Move display control a little bit to the right */
 #layers-list .layer-display {
   position: relative;
   margin-left: 10px;
 }
+/* Verticaly align glyphicon and layer name with display control */
+#layers-list .item.left,
+#layers-list .item.middle {
+  padding-top: 3px;
+}
+/* Slider takes remaining width after glyphicon */
+#layers-list .item.slider {
+  margin-left: 30px;
+  /* Move it lower to align with glyphicon */
+  padding-top: 7px;
+}
+/* Layer info line */
+#layers-list .layer-info {
+  overflow: hidden;
+}
+/* Options takes 100% width in panel line */
 #layers-list .options {
   overflow: hidden;
   width: 100%;
 }
+/* Make a little margin for slider */
 #layers-list .ui-slider {
   width: calc(100% - 15px);
-}
-#layers-list .layer-info {
-  overflow: hidden;
-}
-#layers-list .item.left,
-#layers-list .item.middle {
-  padding-top: 3px;
 }
