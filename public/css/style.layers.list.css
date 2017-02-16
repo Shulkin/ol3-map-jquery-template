@@ -1,28 +1,46 @@
+/* Make paddings in list-group-item smaller */
+#layers-list .list-group-item {
+  padding: 0px 5px;
+}
+/* Table layout in layer item */
 #layers-list .wrapper {
   display: table;
   width: 100%;
   padding: 0;
   margin: 0;
 }
+/* Individual items should be table-cells */
 #layers-list .item.left,
 #layers-list .item.middle,
-#layers-list .item.right {
+#layers-list .item.right,
+#layers-list .item.brief,
+#layers-list .item.slider {
   display: table-cell;
-  padding: .5em;
+  /* Vertical align content in item divs */
   vertical-align: middle;
+  /* Padding to separate content */
+  padding: .5em;
 }
+/* Glyphicon */
 #layers-list .item.left {
   width: 30px;
   text-align: center;
 }
+/* Layer name and clickable anchor for options */
 #layers-list .item.middle {
-  word-break: break-word;
   min-width: 70px;
+  word-break: break-word;
 }
+/* Make cursor pointer on layer name */
+#layers-list .item.middle a {
+  cursor: pointer;
+}
+/* Display control */
 #layers-list .item.right {
   width: 40px;
   text-align: center;
 }
+/* Make container for display control checkbox relative */
 #layers-list .item.right .layer-display {
   position: relative;
 }

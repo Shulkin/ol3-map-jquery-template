@@ -19,30 +19,49 @@
         <!-- Print map layers list here -->
         <% _.each(layers, function(layer) { %>
           <div class="list-group-item">
+            <!-- General info about layer -->
             <div class="wrapper">
+              <!-- Small icon -->
               <div class="item left">
                 <i class="fa fa-globe"></i>
               </div>
+              <!-- Layer name -->
               <div class="item middle">
-                <%= layer.name  %>
-                <!-- Big line, whitespace -->
-                <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit-->
-                <!-- Big line, no_whitespace -->
-                <!--Lorem_ipsum_dolor_sit_amet,_consectetur_adipisicing_elit-->
+                <a data-toggle="collapse" data-target=".options#<%= layer.cid %>">
+                  <%= layer.name %>
+                </a>
               </div>
+              <!-- Display button -->
               <div class="item right">
                 <div class="layer-display">
                   <div class="checkbox-round">
                     <label>
+                      <!-- Show layer if checked -->
                       <input type="checkbox" value="<%= layer.cid %>"
-                        <% print(layer.visible ? 'checked' : '') %>>
+                        <% print(layer.visible ? "checked" : "") %>>
                       <div class="checkbox-inner"></div>
                     </label>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="wrapper options">
+            <!-- Collapsible options panel -->
+            <div class="options collapse out" id="<%= layer.cid %>">
+              <!-- Brief description of the layer -->
+              <div class="wrapper">
+                <div class="item brief">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </div>
+              </div>
+              <!-- Opacity slider control -->
+              <div class="wrapper">
+                <div class="item left">
+                  <i class="fa fa-eye"></i>
+                </div>
+                <div class="item slider">
+                  <div class="ui-slider" value="<%= layer.cid %>"></div>
+                </div>
+              </div>
             </div>
           </div>
         <% }); %>
