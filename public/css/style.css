@@ -11,3 +11,8 @@ body {
 .margin-top-05-em {
   margin-top: .5em;
 }
+.panel-heading {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

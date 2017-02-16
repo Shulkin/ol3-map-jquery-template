@@ -26,6 +26,12 @@
   width: 30px;
   text-align: center;
 }
+/* Hide glyphicon on small screen */
+@media screen and (max-width: 525px) {
+  #layers-list .item.left {
+    display: none;
+  }
+}
 /* Layer name and clickable anchor for options */
 #layers-list .item.middle {
   min-width: 70px;
