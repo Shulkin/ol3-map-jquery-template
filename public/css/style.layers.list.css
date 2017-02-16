@@ -17,17 +17,12 @@
 }
 #layers-list .item.middle {
   word-break: break-word;
-  min-width: 100px;
+  min-width: 70px;
 }
 #layers-list .item.right {
-  width: 70px;
+  width: 40px;
   text-align: center;
 }
-/* = TEST = */
-#layers-list .test-display-checkbox {
-  width: 35px;
-  height: 35px;
-  background: green;
-  display: inline-block;
+#layers-list .item.right .layer-display {
+  position: relative;
 }
-/* === */

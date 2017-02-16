@@ -24,25 +24,25 @@
                 <i class="fa fa-globe"></i>
               </div>
               <div class="item middle">
-                <!-- Small line -->
-                OpenStreetMap
-                <!-- Whitespace -->
+                <%= layer.name  %>
+                <!-- Big line, whitespace -->
                 <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit-->
-                <!-- No_whitespace -->
+                <!-- Big line, no_whitespace -->
                 <!--Lorem_ipsum_dolor_sit_amet,_consectetur_adipisicing_elit-->
               </div>
               <div class="item right">
-                <!--
-                <span class="test-display-checkbox"></span>
-                -->
-                <div class="layer-display checkbox-round">
-                  <label>
-                    <input type="checkbox" value="<%= layer.cid %>"
-                      <% print(layer.visible ? 'checked' : '') %>>
-                    <div class="checkbox-inner"></div>
-                  </label>
+                <div class="layer-display">
+                  <div class="checkbox-round">
+                    <label>
+                      <input type="checkbox" value="<%= layer.cid %>"
+                        <% print(layer.visible ? 'checked' : '') %>>
+                      <div class="checkbox-inner"></div>
+                    </label>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="wrapper options">
             </div>
           </div>
         <% }); %>
