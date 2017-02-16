@@ -1,67 +1,33 @@
-/* Cursor on hover */
-#layers-list .list-group-item {
-  cursor: pointer;
-}
-/* Highlight layer item in list on hover */
-#layers-list .list-group-item:hover {
-  background: #f2f2f2;
-}
-/* Glyphicon to left */
-#layers-list .item.left {
-  float: left;
-  /* Fixed width */
-  width: 30px;
-}
-/* Display control to right */
-#layers-list .item.right {
-  float: right;
-  /* Fixed width */
-  width: 50px;
-}
-/* Layer name between left and right divs */
-#layers-list .item.middle {
-  /* Dynamic width */
-  margin-left: 30px;
-  margin-right: 50px;
-}
-/* Layer description takes whole line */
-#layes-list .item.description {
+#layers-list .wrapper {
+  display: table;
+  width: 100%;
+  padding: 0;
   margin: 0;
 }
-/* Text parameters */
-#layers-list .item.middle,
-#layers-list .item.description {
-  /* String will wrap */
-  overflow-wrap: break-word;
-  /* Until minimum width */
-  min-width: 80px;
-}
-/* Move display control a little bit to the right */
-#layers-list .layer-display {
-  position: relative;
-  margin-left: 10px;
-}
-/* Verticaly align glyphicon and layer name with display control */
 #layers-list .item.left,
+#layers-list .item.middle,
+#layers-list .item.right {
+  display: table-cell;
+  padding: .5em;
+  vertical-align: middle;
+}
+#layers-list .item.left {
+  width: 30px;
+  text-align: center;
+}
 #layers-list .item.middle {
-  padding-top: 3px;
+  word-break: break-word;
+  min-width: 100px;
 }
-/* Slider takes remaining width after glyphicon */
-#layers-list .item.slider {
-  margin-left: 30px;
-  /* Move it lower to align with glyphicon */
-  padding-top: 7px;
+#layers-list .item.right {
+  width: 70px;
+  text-align: center;
 }
-/* Layer info line */
-#layers-list .layer-info {
-  overflow: hidden;
+/* = TEST = */
+#layers-list .test-display-checkbox {
+  width: 35px;
+  height: 35px;
+  background: green;
+  display: inline-block;
 }
-/* Options takes 100% width in panel line */
-#layers-list .options {
-  overflow: hidden;
-  width: 100%;
-}
-/* Make a little margin for slider */
-#layers-list .ui-slider {
-  width: calc(100% - 15px);
-}
+/* === */

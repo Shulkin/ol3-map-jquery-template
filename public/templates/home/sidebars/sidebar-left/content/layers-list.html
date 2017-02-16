@@ -19,41 +19,28 @@
         <!-- Print map layers list here -->
         <% _.each(layers, function(layer) { %>
           <div class="list-group-item">
-            <!-- Icon, name, display button -->
-            <div class="layer-info">
-              <!-- Order left-right-middle is important! -->
+            <div class="wrapper">
               <div class="item left">
                 <i class="fa fa-globe"></i>
               </div>
-              <div class="item right">
-                <div class="layer-display">
-                  <div class="checkbox-round">
-                    <label>
-                      <input type="checkbox" value="<%= layer.cid %>"
-                        <% print(layer.visible ? 'checked' : '') %>>
-                      <div class="checkbox-inner"></div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <!-- Collapse target options div with corresponding layer id -->
               <div class="item middle">
-                <a data-toggle="collapse" data-target=".options#<%= layer.cid %>"><%= layer.name %></a>
+                <!-- Small line -->
+                OpenStreetMap
+                <!-- Whitespace -->
+                <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit-->
+                <!-- No_whitespace -->
+                <!--Lorem_ipsum_dolor_sit_amet,_consectetur_adipisicing_elit-->
               </div>
-            </div>
-            <!-- Collapsible options panel -->
-            <div class="options collapse out" id="<%= layer.cid %>">
-              <div class="margin-top-05-em">
-                <div class="item description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                </div>
-              </div>
-              <div class="margin-top-05-em">
-                <div class="item left">
-                  <i class="icon fa fa-eye"></i>
-                </div>
-                <div class="item slider">
-                  <div class="ui-slider" value="<%= layer.cid %>"></div>
+              <div class="item right">
+                <!--
+                <span class="test-display-checkbox"></span>
+                -->
+                <div class="layer-display checkbox-round">
+                  <label>
+                    <input type="checkbox" value="<%= layer.cid %>"
+                      <% print(layer.visible ? 'checked' : '') %>>
+                    <div class="checkbox-inner"></div>
+                  </label>
                 </div>
               </div>
             </div>
