@@ -28,8 +28,10 @@ define([
     },
       // only sidebar-body of right sidebar handle this click
     onSlideClick: function() {
+      // target .sidebar parent of this
+      var target = this.$(".sidebar-body").closest(".sidebar");
       // hide right sidebar
-      this.$(".sidebar-body").fadeOut("slide", function() {
+      target.fadeOut("slide", function() {
         // show minimized icon
         $(".mini-submenu-right").fadeIn();
         // recalculate margins

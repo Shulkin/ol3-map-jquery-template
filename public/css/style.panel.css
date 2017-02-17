@@ -1,3 +1,9 @@
+/* Overflow text in panel header */
+.panel-heading .panel-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .panel-resizable {
   position: relative;
   overflow: auto;

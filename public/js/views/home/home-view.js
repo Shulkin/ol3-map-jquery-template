@@ -46,8 +46,7 @@ define([
       // hide icon
       $(".mini-submenu-left").fadeOut(function() {
         // show sidebar
-        $(".sidebar-left .sidebar-body").fadeIn(
-          "slide", function() {
+        $(".sidebar-left").fadeIn("slide", function() {
             Global.applyMargins();
             // update scrollbars on nested panels
             self.$("#sidebar-left .panel-body").perfectScrollbar("update");
@@ -60,8 +59,7 @@ define([
       // hide icon
       $(".mini-submenu-right").fadeOut(function() {
         // show sidebar
-        $(".sidebar-right .sidebar-body").fadeIn(
-          "slide", function() {
+        $(".sidebar-right").fadeIn("slide", function() {
             Global.applyMargins();
             // update scrollbars on nested panels
             self.$("#sidebar-right .panel-body").perfectScrollbar("update");
