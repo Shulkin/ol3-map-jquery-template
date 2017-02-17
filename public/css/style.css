@@ -11,8 +11,10 @@ body {
 .margin-top-05-em {
   margin-top: .5em;
 }
-.panel-heading {
+.panel-heading .panel-title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  /* TEST */
+  background: red;
 }

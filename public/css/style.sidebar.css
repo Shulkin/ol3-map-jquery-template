@@ -6,9 +6,14 @@
 }
 /* Chevron on sidebar header */
 .slide-submenu {
+  /*
   display: inline-block;
-  padding: 0 8px;
   cursor: pointer;
+  padding: 0 8px;
+  */
+  position: absolute;
+  cursor: pointer;
+  right: calc(0% + 32px);
 }
 .slide-submenu:hover {
   /* Small highlight on hover */
