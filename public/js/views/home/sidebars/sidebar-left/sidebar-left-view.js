@@ -29,7 +29,7 @@ define([
         // print layers list in view
         collection: window.app.collection.Layers
       }).$el);
-      //this.$("#left-content-1-panel").html(new LeftContent1().$el);
+      this.$("#left-content-1-panel").html(new LeftContent1().$el);
     },
     // only sidebar-body of left sidebar handle this click
     onSlideClick: function() {
@@ -38,10 +38,9 @@ define([
       // hide left sidebar
       target.fadeOut("slide", function() {
         // show minimized icon
-        $(".mini-submenu-left").fadeIn(function() {
-          // recalculate margins
-          Global.applyMargins();
-        });
+        $(".mini-submenu-left").fadeIn();
+        // recalculate margins
+        Global.applyMargins();
       });
     }
   });
