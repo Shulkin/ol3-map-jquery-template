@@ -1,7 +1,9 @@
 /* Left and right sidebars should be above map z-index */
 .sidebar {
   z-index: 45;
-  /* All margins 0.5em */
+}
+/* Set margin for sidebar panels */
+.sidebar-body {
   margin: .5em;
 }
 /* Chevron on sidebar header */

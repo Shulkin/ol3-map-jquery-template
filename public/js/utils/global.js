@@ -9,8 +9,8 @@ define([
       // on initial application state
       if (this.isConstrained()) {
         // show sidebars
-        $(".sidebar-left .sidebar-body").fadeOut("slide");
-        $(".sidebar-right .sidebar-body").fadeOut("slide");
+        $(".sidebar-left").fadeOut("slide");
+        $(".sidebar-right").fadeOut("slide");
         // hide minimized icons
         $(".mini-submenu-left").fadeIn();
         $(".mini-submenu-right").fadeIn();

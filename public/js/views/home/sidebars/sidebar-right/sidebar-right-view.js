@@ -33,9 +33,10 @@ define([
       // hide right sidebar
       target.fadeOut("slide", function() {
         // show minimized icon
-        $(".mini-submenu-right").fadeIn();
-        // recalculate margins
-        Global.applyMargins();
+        $(".mini-submenu-right").fadeIn(function() {
+          // recalculate margins
+          Global.applyMargins();
+        });
       });
     }
   });
