@@ -3,8 +3,9 @@ define([
   "collections/layers-collection", // layers list
   // views
   "views/navbar/navbar-view", // menu navbar
-  "views/home/home-view" // map, panels, etc.
-], function(Layers, Navbar, Home) {
+  "views/home/home-view", // map, panels, etc.
+  "views/footer/footer-view" // footer
+], function(Layers, Navbar, Home, Footer) {
   var initialize = function() {
     // initialize global storage
     window.app = (window.app || {});
@@ -17,6 +18,8 @@ define([
     var navbar = new Navbar();
     // create content container
     var home = new Home();
+    // create footer
+    var footer = new Footer();
   };
   return {
     initialize: initialize

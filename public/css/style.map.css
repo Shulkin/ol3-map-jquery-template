@@ -3,7 +3,8 @@
   position: absolute;
   /* 50px is default navbar height */
   top: 50px;
-  bottom: 0px;
+  /* 22px is footer height */
+  bottom: 22px;
   left: 0px;
   right: 0px;
   /* Fixed map z-index */
