@@ -3,8 +3,12 @@
   z-index: 45;
 }
 /* Set margin for sidebar panels */
-.sidebar-body {
-  margin: .5em;
+.sidebar-left .sidebar-body {
+  margin: .5em -.4em .5em .5em;
+}
+/* -.4em move ol-zoom and ol-rotate close to panels */
+.sidebar-right .sidebar-body {
+  margin: .5em .5em .5em -.4em;
 }
 /* Chevron on sidebar header */
 .slide-submenu {
