@@ -16,10 +16,15 @@ define([
     window.app.collection.Layers = list;
     // create navbar
     var navbar = new Navbar();
-    // create content container
-    var home = new Home();
     // create footer
     var footer = new Footer();
+    // create content container
+    var home = new Home();
+    /*
+     * Create footer before home, because mouse-position
+     * element must be created before we use it to print
+     * coordinates from map view
+     */
   };
   return {
     initialize: initialize

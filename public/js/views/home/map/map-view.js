@@ -17,6 +17,15 @@ define([
           zoom: 2
         })
       });
+      // create mouse position control
+      var mousePosition = new Ol.control.MousePosition({
+        coordinateFormat: Ol.coordinate.createStringXY(2),
+        projection: "EPSG:4326",
+        className: "custom-mouse-position",
+        target: document.getElementById("mouse-position"),
+        undefinedHTML: "&nbsp;"
+      });
+      this.map.addControl(mousePosition);
       // listen for layers collection events
       this.collection.on("change:visible",
         this.onChangeLayerDisplay, // show/hide layer
