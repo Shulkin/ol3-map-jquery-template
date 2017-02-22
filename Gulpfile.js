@@ -8,8 +8,14 @@ var connect = require("gulp-connect");
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
+// clean build folder
+/*
+gulp.task("clean", function() {
+  gulp.src("")
+});
+*/
 // css
-gulp.taks("css", function() {
+gulp.task("css", function() {
   gulp.src("./public/css/*.css")
     .pipe(concatCss("style.min.css"))
     .pipe(minifyCss({compatibility: 'ie8'}))
@@ -41,7 +47,7 @@ gulp.task("js", function() {
 });
 // images
 gulp.task("img", function(){
-  gulp.src("./public/imgs/*")
+  gulp.src("./public/imgs/*.png")
     .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
@@ -51,7 +57,7 @@ gulp.task("img", function(){
     .pipe(connect.reload());
 });
 // connect
-gulp.taks("connect", function() {
+gulp.task("connect", function() {
   connect.server({
     root: "build",
     livereload: true
