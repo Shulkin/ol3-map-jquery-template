@@ -26,27 +26,34 @@ gulp.task("css", function() {
     .pipe(gulp.dest("./build/css/"))
     .pipe(connect.reload());
 });
-// index.html
-gulp.task("html", function() {
+// copy index.html to build folder
+gulp.task("copy:html", function() {
   gulp.src("./public/*.html")
     .pipe(gulp.dest("./build/"))
     .pipe(connect.reload());
 });
+// copy favicon.ico to build folder
+gulp.task("copy:favicon", function() {
+  gulp.src("./public/*.ico")
+    .pipe(gulp.dest("./build/"))
+    .pipe(connect.reload());
+})
 // html templates
 gulp.task("templates", function() {
+  // copy html templates
   gulp.src("./public/templates/**/*.html")
     .pipe(gulp.dest("./build/templates/"))
     .pipe(connect.reload());
 });
-// javascript
+// minify javascript files
 gulp.task("js", function() {
   gulp.src("./public/js/**/*.js")
     .pipe(uglify())
     .pipe(gulp.dest("./build/js/"))
     .pipe(connect.reload());
 });
-// images
-gulp.task("img", function(){
+// copy images to build folder
+gulp.task("img", function() {
   gulp.src("./public/imgs/*.png")
     .pipe(imagemin({
         progressive: true,
@@ -63,12 +70,19 @@ gulp.task("connect", function() {
     livereload: true
   });
 });
-// watch
+// build source files on change
 gulp.task("watch", function() {
   gulp.watch("./public/css/*.css", ["css"]);
   gulp.watch("./public/*.html", ["html"]);
   gulp.watch("./public/templates/**/.html", ["templates"])
   gulp.watch("./public/js/**/*.js", ["js"]);
 });
-// default
-gulp.task("default", ["html", "templates", "css", "js", "connect", "watch"]);
+// default gulp task
+gulp.task("default", [
+  // build source files
+  "css", "js", "img"
+  // copy html templates
+  "copy:html", "copy:favicon", "templates",
+  // connect to server and watch
+  "connect", "watch"
+]);
