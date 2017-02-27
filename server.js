@@ -11,8 +11,8 @@ var app = express();
 var port = process.env.PORT || 3000;
 // === Configure ===
 // set up express middleware
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use("/bower_components", express.static(path.join(__dirname, "bower_components")));
 app.use(bodyParser.json());
 app.use(bodyParser.text());
@@ -21,7 +21,7 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 app.use(methodOverride());
 // default route to build/index.html
 app.get("*", function(req ,res) {
-  res.sendFile("public/index.html");
+  res.sendFile("build/index.html");
 });
 // === Start server ===
 app.listen(port);

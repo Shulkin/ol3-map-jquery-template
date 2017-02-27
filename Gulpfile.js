@@ -3,13 +3,12 @@ var rimraf = require("rimraf");
 var clean = require("gulp-rimraf");
 var concatCss = require("gulp-concat-css");
 var minifyCss = require("gulp-minify-css");
-var rename = require("gulp-rename");
 var autoprefixer = require("gulp-autoprefixer");
-var livereload = require("gulp-livereload");
 var connect = require("gulp-connect");
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
+var nodemon = require("gulp-nodemon");
 // delete build folder
 gulp.task("delete:build", function(done) {
   return rimraf("./build", done);
@@ -70,19 +69,20 @@ gulp.task("img", function() {
     .pipe(gulp.dest("./build/imgs/"))
     .pipe(connect.reload());
 });
-// connect to server
-gulp.task("connect", function() {
-  connect.server({
-    root: "build",
-    livereload: true
-  });
-});
 // build source files on change
 gulp.task("watch", function() {
   gulp.watch("./public/js/**/*.js", ["js"]);
   gulp.watch("./public/css/*.css", ["css"]);
   gulp.watch("./public/*.html", ["public"]);
   gulp.watch("./public/templates/**/.html", ["templates"])
+});
+// connect to server
+gulp.task("connect", ["watch"], function() {
+  return nodemon({
+    script: "server.js"
+  }).on("restart", function() {
+    console.log("Restart server");
+  })
 });
 // default gulp task
 gulp.task("default", [
