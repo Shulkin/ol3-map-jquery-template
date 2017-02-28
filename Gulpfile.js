@@ -1,15 +1,15 @@
 var gulp = require("gulp");
 var rimraf = require("rimraf");
 var clean = require("gulp-rimraf");
+var uglify = require("gulp-uglify");
 var concatCss = require("gulp-concat-css");
 var minifyCss = require("gulp-minify-css");
 var autoprefixer = require("gulp-autoprefixer");
-var connect = require("gulp-connect");
-var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
-var pngquant = require("imagemin-pngquant");
+var connect = require("gulp-connect");
 var nodemon = require("gulp-nodemon");
 var runSequence = require("run-sequence");
+var pngquant = require("imagemin-pngquant");
 // delete build folder
 gulp.task("delete:build", function(done) {
   return rimraf("./build", done);
