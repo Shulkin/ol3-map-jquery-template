@@ -85,10 +85,11 @@ gulp.task("nodemon", ["watch"], function() {
     console.log("Restart nodemon");
   });
 });
-// default gulp task
-gulp.task("default", [
-  "delete:build", // delete previous build first
+// create build and run development server with watch
+gulp.task("build:development", [
+  "delete:build" // delete previous build first
 ], function(callback) {
+  console.log("Build development");
   runSequence(
     // build source and copy public files in parallel
     ["js", "css", "public", "templates", "img"],
@@ -97,3 +98,13 @@ gulp.task("default", [
     callback // finally call callback function
   );
 });
+// simply create build folder
+gulp.task("build:production", [
+  "delete:build" // delete previous
+], function() {
+  console.log("Build production");
+  // build source files
+  gulp.start("js", "css", "public", "templates", "img");
+})
+// development by default
+gulp.task("default", ["build:development"]);
