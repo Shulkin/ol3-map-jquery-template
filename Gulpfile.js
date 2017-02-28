@@ -9,6 +9,7 @@ var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
 var nodemon = require("gulp-nodemon");
+var runSequence = require("run-sequence");
 // delete build folder
 gulp.task("delete:build", function(done) {
   return rimraf("./build", done);
@@ -69,29 +70,30 @@ gulp.task("img", function() {
     .pipe(gulp.dest("./build/imgs/"))
     .pipe(connect.reload());
 });
-// build source files on change
+// rebuild source files on change
 gulp.task("watch", function() {
   gulp.watch("./public/js/**/*.js", ["js"]);
   gulp.watch("./public/css/*.css", ["css"]);
   gulp.watch("./public/*.html", ["public"]);
-  gulp.watch("./public/templates/**/.html", ["templates"])
+  gulp.watch("./public/templates/**/*.html", ["templates"]);
 });
 // connect to server
-gulp.task("connect", ["watch"], function() {
+gulp.task("nodemon", ["watch"], function() {
   return nodemon({
     script: "server.js"
   }).on("restart", function() {
-    console.log("Restart server");
-  })
+    console.log("Restart nodemon");
+  });
 });
 // default gulp task
 gulp.task("default", [
-  "delete:build", // delete previous build
-], function() {
-  gulp.start(
-    // build source and copy public files
-    "js", "css", "public", "templates", "img",
-    // connect to server and watch
-    "connect", "watch"
+  "delete:build", // delete previous build first
+], function(callback) {
+  runSequence(
+    // build source and copy public files in parallel
+    ["js", "css", "public", "templates", "img"],
+    // then connect to server and watch source files for change
+    ["nodemon", "watch"],
+    callback // finally call callback function
   );
 });
