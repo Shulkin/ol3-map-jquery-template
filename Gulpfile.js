@@ -2,6 +2,8 @@ var gulp = require("gulp");
 var rimraf = require("rimraf");
 var clean = require("gulp-rimraf");
 var uglify = require("gulp-uglify");
+var concat = require("gulp-concat");
+var amdOptimize = require("amd-optimize");
 var concatCss = require("gulp-concat-css");
 var minifyCss = require("gulp-minify-css");
 var autoprefixer = require("gulp-autoprefixer");
@@ -26,12 +28,17 @@ gulp.task("clean:public", function() {
 gulp.task("clean:templates", function() {
   return gulp.src("./build/templates/*", {read: false}).pipe(clean());
 });
-// uglify javascript files
+// bundle javascript files
 gulp.task("js", ["clean:js"], function() {
   return gulp.src("./public/js/**/*.js")
-    .pipe(uglify())
+    .pipe(amdOptimize("main"))
+    .pipe(concat("bundle.js"))
     .pipe(gulp.dest("./build/js/"))
     .pipe(connect.reload());
+  //return gulp.src("./public/js/**/*.js")
+  //  .pipe(uglify())
+  //  .pipe(gulp.dest("./build/js/"))
+  //  .pipe(connect.reload());
 });
 // concatenate styles
 gulp.task("css", ["clean:css"], function() {
