@@ -5,11 +5,9 @@ var uglify = require("gulp-uglify");
 var concatCss = require("gulp-concat-css");
 var minifyCss = require("gulp-minify-css");
 var autoprefixer = require("gulp-autoprefixer");
-var imagemin = require("gulp-imagemin");
 var connect = require("gulp-connect");
 var nodemon = require("gulp-nodemon");
 var runSequence = require("run-sequence");
-var pngquant = require("imagemin-pngquant");
 // delete build folder
 gulp.task("delete:build", function(done) {
   return rimraf("./build", done);
@@ -62,11 +60,6 @@ gulp.task("templates", ["clean:templates"], function() {
 // copy images to build folder
 gulp.task("img", function() {
   return gulp.src("./public/imgs/*.png")
-    .pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant()]
-    }))
     .pipe(gulp.dest("./build/imgs/"))
     .pipe(connect.reload());
 });
